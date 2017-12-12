@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  date: MyString
+  description: MyString
+  location: MyString
+  company_lead_id: MyString
+  rsvp_id: MyString
+  confirmation: MyString
+  barcode: MyString
+
+two:
+  title: MyString
+  date: MyString
+  description: MyString
+  location: MyString
+  company_lead_id: MyString
+  rsvp_id: MyString
+  confirmation: MyString
+  barcode: MyString

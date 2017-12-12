@@ -1,0 +1,2 @@
+class RsvpTicket < ApplicationRecord
+end
