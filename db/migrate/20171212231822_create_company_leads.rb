@@ -6,10 +6,8 @@ class CreateCompanyLeads < ActiveRecord::Migration[5.1]
       t.string :email_address
       t.string :phone_number
       t.boolean :licensed, default: false
-      t.integer :rsvp_id, default: nil
-      t.integer :interview_id, default: nil
       t.boolean :trainer_purchased, default: false
-
+      t.string :hire, default: "N/A"
       t.timestamps
     end
   end

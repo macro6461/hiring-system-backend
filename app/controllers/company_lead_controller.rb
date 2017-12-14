@@ -1,2 +1,0 @@
-class CompanyLeadController < ApplicationController
-end

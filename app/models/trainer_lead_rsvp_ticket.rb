@@ -1,0 +1,2 @@
+class TrainerLeadRsvpTicket < ApplicationRecord
+end

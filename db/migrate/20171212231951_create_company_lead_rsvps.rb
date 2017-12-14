@@ -1,12 +1,13 @@
-class CreateInterviews < ActiveRecord::Migration[5.1]
+class CreateCompanyLeadRsvps < ActiveRecord::Migration[5.1]
   def change
-    create_table :interviews do |t|
+    create_table :rsvps do |t|
       t.string :title
-      t.integer :trainer_id, default: nil
-      t.string :date
+      t.datetime :date
+      t.string :description
       t.string :location
       t.integer :company_lead_id, default: nil
       t.integer :trainer_lead_id, default: nil
+      t.boolean :checked_in, default: false
 
       t.timestamps
     end
