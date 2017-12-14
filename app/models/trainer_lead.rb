@@ -1,7 +1,10 @@
 class TrainerLead < ApplicationRecord
 
-  has_one :trainer_lead_rsvp
-  has_one :trainer_lead_interview
-  has_one :trainer
+  belongs_to :trainer
+  has_many :trainer_lead_rsvps
+  has_many :trainer_lead_rsvp_tickets, through: :trainer_lead_rsvps
+  has_many :events, through: :trainer_lead_rsvps
+  has_many :trainer_lead_interviews
+
 
 end

@@ -3,7 +3,7 @@ class CreateTrainerLeadInterviews < ActiveRecord::Migration[5.1]
     create_table :trainer_lead_interviews do |t|
        t.string :title
        t.integer :trainer_id
-       t.datetime :date
+       t.string :date
        t.string :location
        t.integer :trainer_lead_id
        t.text :notes, default: nil

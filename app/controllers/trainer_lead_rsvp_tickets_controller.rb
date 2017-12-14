@@ -6,8 +6,9 @@ class TrainerLeadRsvpTicketsController < ApplicationController
     end
 
     def show
-      @trainer_lead_ticket = TrainerLeadRsvpTicket.find(params[:id])
-      render json: @trainer_lead_ticket
+      @trainer_lead_rsvp_ticket = TrainerLeadRsvpTicket.find(params[:id])
+      @qr = RQRCode::QRCode.new(@trainer_lead_rsvp_ticket.provisioning_uri("hiring-system-backend"), :size => 7, :level => :h )
+      render json: @trainer_lead_rsvp_ticket
     end
 
     def create
@@ -38,7 +39,7 @@ class TrainerLeadRsvpTicketsController < ApplicationController
     private
 
     def trainer_lead_ticket_params
-      params.permit(:title, :date, :description, :location, :trainer_lead_id, :trainer_lead_rsvp_id, :confirmation, :barcode)
+      params.permit(:title, :date, :description, :location, :trainer_lead_id, :trainer_lead_rsvp_id, :confirmation, :barcode, :scanned)
     end
 
 end

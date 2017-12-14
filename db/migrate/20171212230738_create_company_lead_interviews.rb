@@ -1,9 +1,9 @@
 class CreateCompanyLeadInterviews < ActiveRecord::Migration[5.1]
   def change
-    create_table :interviews do |t|
+    create_table :company_lead_interviews do |t|
       t.string :title
       t.integer :trainer_id
-      t.datetime :date
+      t.string :date
       t.string :location
       t.integer :company_lead_id
       t.text :notes, default: nil
