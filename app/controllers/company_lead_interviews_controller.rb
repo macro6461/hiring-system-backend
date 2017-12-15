@@ -11,18 +11,16 @@ class CompanyLeadInterviewsController < ApplicationController
     end
 
     def create
-
-      let @company_lead_found = CompanyLead.wherePermission.where(:first_name=>company_lead_interview_params[:first_name]).where(:last_name=>company_lead_interview_params[:last_name], email_address: company_lead_interview_params[:email_address]).first
-
       if !company_lead_interview_params[:company_lead_id]
-        if !@company_lead_found
-          @company_lead = CompanyLead.create(first_name: company_lead_interview_params[:first_name], last_name: company_lead_interview_params[:last_name], email_address: company_lead_interview_params[:email_address], phone_number: company_lead_interview_params[:phone_number], licensed: company_lead_interview_params[:licensed])
-
-          @company_lead_interview = CompanyLeadInterview.new(title: company_lead_interview_params[:title], trainer_id: company_lead_interview_params[:trainer_id], date: company_lead_interview_params[:date], location: company_lead_interview_params[:location], company_lead_id: @company_lead.id)
-
-        elsif @company_lead_found
-          @company_lead_interview = CompanyLeadInterview.new(title: company_lead_interview_params[:title], trainer_id: company_lead_interview_params[:trainer_id], date: company_lead_interview_params[:date], location: company_lead_interview_params[:location], company_lead_id: @company_lead_found.id)
+        @company_lead = CompanyLead.where(:first_name=>company_lead_interview_params[:first_name], :last_name=>company_lead_interview_params[:last_name], email_address: company_lead_interview_params[:email_address]).first_or_create do |company_lead|
+          company_lead.first_name = company_lead_interview_params[:first_name]
+          company_lead.last_name = company_lead_interview_params[:last_name]
+          company_lead.email_address = company_lead_interview_params[:email_address]
+          company_lead.phone_number = company_lead_interview_params[:phone_number]
+          company_lead.licensed = company_lead_interview_params[:licensed]
         end
+
+        @company_lead_interview = CompanyLeadInterview.new(title: company_lead_interview_params[:title], trainer_id: company_lead_interview_params[:trainer_id], date: company_lead_interview_params[:date], location: company_lead_interview_params[:location], company_lead_id: @company_lead.id)
       end
 
       if @company_lead_interview.save
