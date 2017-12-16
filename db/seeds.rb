@@ -80,9 +80,9 @@
 
 
 #TrainerLeads
-  TrainerLead.create(first_name: "Carrie", last_name: "Fischer", email_address: "joe@dileo.com", phone_number: "221-234-2221", licensed: true, trainer_id: 1)
+  TrainerLead.create(first_name: "Carrie", last_name: "Fischer", email_address: "joe@dileo.com", phone_number: "221-234-2221", licensed: true, trainer_id: 1, interview_trainer_id: nil)
 
-  TrainerLead.create(first_name: "Susan", last_name: "Sarandon", email_address: "joe@dileo.com", phone_number: "111-234-2221", licensed: false, trainer_id: 1)
+  TrainerLead.create(first_name: "Susan", last_name: "Sarandon", email_address: "joe@dileo.com", phone_number: "111-234-2221", licensed: false, trainer_id: 1, interview_trainer_id: nil)
 
 
 #CompanyLeadRsvps

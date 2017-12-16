@@ -15,14 +15,14 @@ class CompanyLeadInterview < ApplicationRecord
   end
 
   def update_trainer
-    byebug
+
     if self.trainer_id == nil
       return "no trainer assigned"
     else
       is_hired = self.hire
       company_lead_interview_trainer = Trainer.all.find(self.trainer_id)
       if is_hired == "N/A"
-        byebug
+
         company_lead_interview_trainer.update(occupied: true)
         # return company_lead_interview_trainer
       elsif is_hired == "yes"
@@ -39,11 +39,11 @@ class CompanyLeadInterview < ApplicationRecord
     if self.hire == "N/A"
       return "N/A"
     elsif self.hire.downcase == "yes"
-      byebug
+
       # self.update(trainer_id: nil)
       return self.company_lead.update(hire: "yes")
     elsif self.hire.downcase == "no"
-      byebug
+
       # self.update(trainer_id: nil)
       return self.company_lead.update(hire: "no")
     end
