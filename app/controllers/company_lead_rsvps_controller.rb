@@ -11,8 +11,17 @@ class CompanyLeadRsvpsController < ApplicationController
     end
 
     def create
-      byebug
-      @company_lead_rsvp = CompanyLeadRsvp.new(company_lead_rsvp_params)
+      if !company_lead_rsvp_params[:company_lead_id]
+        @company_lead = CompanyLead.where(:first_name=>company_lead_rsvp_params[:first_name], :last_name=>company_lead_rsvp_params[:last_name], email_address: company_lead_rsvp_params[:email_address]).first_or_create do |company_lead|
+          company_lead.first_name = company_lead_rsvp_params[:first_name]
+          company_lead.last_name = company_lead_rsvp_params[:last_name]
+          company_lead.email_address = company_lead_rsvp_params[:email_address]
+          company_lead.phone_number = company_lead_rsvp_params[:phone_number]
+          company_lead.licensed = company_lead_rsvp_params[:licensed]
+        end
+
+        @company_lead_rsvp = CompanyLeadInterview.new(title: company_lead_rsvp_params[:title], trainer_id: company_lead_rsvp_params[:trainer_id], date: company_lead_rsvp_params[:date], location: company_lead_rsvp_params[:location], company_lead_id: @company_lead.id)
+      end
       if @company_lead_rsvp.save
         render json: {company_lead_rsvp: @company_lead_rsvp}
       else
@@ -38,7 +47,7 @@ class CompanyLeadRsvpsController < ApplicationController
     private
 
     def company_lead_rsvp_params
-      params.permit(:title, :date, :description, :location, :company_lead_id, :event_id, :checked_in)
+      params.permit(:title, :date, :description :location, :company_lead_id, :email_address, :first_name, :last_name, :phone_number, :licensed, :event_id)
     end
 
 end

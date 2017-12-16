@@ -5,7 +5,7 @@ class CreateCompanyLeadRsvps < ActiveRecord::Migration[5.1]
       t.string :date
       t.string :description
       t.string :location
-      t.integer :company_lead_id, default: nil
+      t.integer :company_lead_id
 
       t.boolean :checked_in, default: false
       t.integer :event_id
