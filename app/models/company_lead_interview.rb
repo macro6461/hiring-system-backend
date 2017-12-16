@@ -4,11 +4,11 @@ class CompanyLeadInterview < ApplicationRecord
   belongs_to :company_lead
 
 
-  after_save :update_company_lead, :update_trainer
+  after_save :update_company_lead, :update_trainer, :check_leads
 
   def trainer
     if self.trainer_id == nil
-      return "no trainer assigned"
+      "no trainer assigned"
     else
       company_lead_interview_trainer = Trainer.all.find(self.trainer_id)
     end
@@ -17,7 +17,7 @@ class CompanyLeadInterview < ApplicationRecord
   def update_trainer
 
     if self.trainer_id == nil
-      return "no trainer assigned"
+      "no trainer assigned"
     else
       is_hired = self.hire
       company_lead_interview_trainer = Trainer.all.find(self.trainer_id)
@@ -36,16 +36,32 @@ class CompanyLeadInterview < ApplicationRecord
   end
 
   def update_company_lead
+
     if self.hire == "N/A"
-      return "N/A"
+      "N/A"
     elsif self.hire.downcase == "yes"
 
       # self.update(trainer_id: nil)
-      return self.company_lead.update(hire: "yes")
+      self.company_lead.update(hire: "yes")
     elsif self.hire.downcase == "no"
 
       # self.update(trainer_id: nil)
-      return self.company_lead.update(hire: "no")
+      self.company_lead.update(hire: "no")
+    end
+  end
+
+  def check_leads
+    Trainer.all.map do |trainer|
+
+      if trainer.trainer_lead_interviews.length == 0 && trainer.company_lead_interviews.length == 0 && trainer.occupied == false
+        trainer
+      elsif trainer.trainer_lead_interviews.length > 0 || trainer.company_lead_interviews.length > 0 && trainer.occupied == true
+        trainer
+      elsif trainer.trainer_lead_interviews.length == 0 && trainer.company_lead_interviews.length == 0 && trainer.occupied == true
+        trainer.update(occupied: false)
+      elsif trainer.trainer_lead_interviews.length > 0 || trainer.company_lead_interviews.length > 0 && trainer.occupied == false
+        trainer.update(occupied: true)
+      end
     end
   end
 
