@@ -80,9 +80,9 @@
 
 
 #TrainerLeads
-    carrie = TrainerLead.create(first_name: "Carrie", last_name: "Fischer", email_address: "joe@dileo.com", phone_number: "221-234-2221", licensed: true, trainer_id: 1)
+  TrainerLead.create(first_name: "Carrie", last_name: "Fischer", email_address: "joe@dileo.com", phone_number: "221-234-2221", licensed: true, trainer_id: 1)
 
-    susan = TrainerLead.create(first_name: "Susan", last_name: "Sarandon", email_address: "joe@dileo.com", phone_number: "111-234-2221", licensed: false, trainer_id: 1)
+  TrainerLead.create(first_name: "Susan", last_name: "Sarandon", email_address: "joe@dileo.com", phone_number: "111-234-2221", licensed: false, trainer_id: 1)
 
 
 #CompanyLeadRsvps
@@ -99,11 +99,11 @@
     TrainerLeadRsvp.create(title: "Bohemia Realty Group March Hiring Event", date: "Wednesday, March 21st, 7-8:30pm", description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", trainer_lead_id: 2, event_id: 3)
 
 #TrainerLeadInterviews
-    TrainerLeadInterview.create(title: "Brian Interview with Carrie Fischer", date: "Thursday, January 11th, 3-4:00pm", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", trainer_lead_id: 1, trainer_id: 1)
+    TrainerLeadInterview.create(title: "Brian Interview with Carrie Fischer", date: "Thursday, January 11th, 3-4:00pm", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", trainer_lead_id: 1)
 
     TrainerLeadInterview.create(title: "Brian Interview with Susan Sarandon", date: "Friday, January 12th, 2-3:00pm", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", trainer_lead_id: 2) #no trainer yet
 
 #CompanyLeadInterviews
-    jane_company_interview = CompanyLeadInterview.create(title: "Brian Interview with Jane Doe", date: "Thursday, February 22nd, 2-3:00pm", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", company_lead_id: 1) #no trainer yet
+  CompanyLeadInterview.create(title: "Brian Interview with Jane Doe", date: "Thursday, February 22nd, 2-3:00pm", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", company_lead_id: 1) #no trainer yet
 
-    joe_company_interview = CompanyLeadInterview.create(title: "Lucy Interview with Joe Dileo", date: "Friday, February 23nd, 1-2:00pm", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", company_lead_id: 3, trainer_id: 2)
+  CompanyLeadInterview.create(title: "Lucy Interview with Joe Dileo", date: "Friday, February 23nd, 1-2:00pm", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", company_lead_id: 3) #no trainer yet
