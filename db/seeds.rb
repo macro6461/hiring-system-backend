@@ -74,9 +74,9 @@
 #CompanyLeads
     jane = CompanyLead.create(first_name: "Jane", last_name: "Doe", email_address: "jane@doe.com", phone_number: "221-221-2221", licensed: true)
 
-    paul = CompanyLead.create(first_name: "Paul", last_name: "Bunion", email_address: "paul@bunion.com", phone_number: "221-333-2221", licensed: false)
+CompanyLead.create(first_name: "Paul", last_name: "Bunion", email_address: "paul@bunion.com", phone_number: "221-333-2221", licensed: false)
 
-    joe = CompanyLead.create(first_name: "Joe", last_name: "Dileo", email_address: "joe@dileo.com", phone_number: "221-888-2221", licensed: true)
+CompanyLead.create(first_name: "Joe", last_name: "Dileo", email_address: "joe@dileo.com", phone_number: "221-888-2221", licensed: true)
 
 
 #TrainerLeads
@@ -104,6 +104,6 @@
     TrainerLeadInterview.create(title: "Brian Interview with Susan Sarandon", date: "Friday, January 12th, 2-3:00pm", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", trainer_lead_id: 2) #no trainer yet
 
 #CompanyLeadInterviews
-  CompanyLeadInterview.create(title: "Brian Interview with Jane Doe", date: "Thursday, February 22nd, 2-3:00pm", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", company_lead_id: 1) #no trainer yet
-
-  CompanyLeadInterview.create(title: "Lucy Interview with Joe Dileo", date: "Friday, February 23nd, 1-2:00pm", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", company_lead_id: 3) #no trainer yet
+  # CompanyLeadInterview.create(date: "Thursday, February 22nd, 2-3:00pm", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", company_lead_id: 1) #no trainer yet
+  #
+  # CompanyLeadInterview.create(date: "Friday, February 23nd, 1-2:00pm", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", company_lead_id: 3) #no trainer yet
