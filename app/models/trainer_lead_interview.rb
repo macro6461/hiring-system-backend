@@ -16,7 +16,6 @@ class TrainerLeadInterview < ApplicationRecord
 
 
   def update_trainer
-
     if self.trainer_id == nil
       "no trainer assigned"
     else
@@ -61,16 +60,12 @@ class TrainerLeadInterview < ApplicationRecord
 
     Trainer.all.map do |trainer|
       if trainer.trainer_lead_interviews.length == 0 && trainer.company_lead_interviews.length == 0 && trainer.occupied == false
-
         trainer
       elsif trainer.trainer_lead_interviews.length > 0 || trainer.company_lead_interviews.length > 0 && trainer.occupied == true
-
         trainer
       elsif trainer.trainer_lead_interviews.length == 0 && trainer.company_lead_interviews.length == 0 && trainer.occupied == true
-
         trainer.update(occupied: false)
       elsif trainer.trainer_lead_interviews.length > 0 || trainer.company_lead_interviews.length > 0 && trainer.occupied == false
-
         trainer.update(occupied: true)
       end
     end
