@@ -1,7 +1,7 @@
 class TrainersController < ApplicationController
 
   def index
-      @trainers = Trainer.all
+      @trainers = Trainer.all.sort_by(&:updated_at)
       render json: @trainers
     end
 
