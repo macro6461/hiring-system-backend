@@ -10,6 +10,7 @@ class CreateTrainerLeadRsvpTickets < ActiveRecord::Migration[5.1]
        t.integer :confirmation, default: nil
        t.integer :barcode, default: nil
        t.boolean :scanned, default: false
+       t.integer :event_id
 
       t.timestamps
     end
