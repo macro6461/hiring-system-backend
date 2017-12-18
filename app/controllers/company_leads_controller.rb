@@ -21,7 +21,7 @@ class CompanyLeadsController < ApplicationController
       respond_to do |format|
         if @company_lead.save
           # Tell the UserMailer to send a welcome email after save
-          CompanyLeadMailer.with(company_lead: @company_lead).welcome_email.deliver_now
+          CompanyLeadMailer.with(company_lead: @company_lead).welcome_email(@company_lead).deliver_now
 
           format.html { redirect_to(@company_lead, notice: 'Company Lead was successfully created.') }
           format.json { render json: @company_lead, status: :created, location: @company_lead }
