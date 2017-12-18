@@ -8,6 +8,7 @@ class CreateCompanyLeadRsvpTickets < ActiveRecord::Migration[5.1]
        t.integer :company_lead_id
        t.integer :company_lead_rsvp_id
        t.integer :confirmation, default: nil
+       t.integer :event_id
 
        t.boolean :scanned, default: false
 

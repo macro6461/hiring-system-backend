@@ -10,7 +10,9 @@ class CompanyLeadRsvp < ApplicationRecord
   def create_or_destroy_company_lead_rsvp_ticket
     # when company lead checks in (changes value of company_lead_rsvp.checked_in to true) destroy ticket (barcode can't be scanned)
     if !self.checked_in
-      rsvp_ticket = CompanyLeadRsvpTicket.where(:company_lead_id=>self.company_lead_id).first_or_create do |ticket|
+      byebug
+      rsvp_ticket = CompanyLeadRsvpTicket.where(:company_lead_id=>self.company_lead_id, :event_id=>self.event_id).first_or_create do |ticket|
+        byebug
         ticket.title = self.title
         ticket.date = self.date
         ticket.description = self.description

@@ -13,6 +13,7 @@ class CompanyLeadRsvpsController < ApplicationController
     def create
       if !company_lead_rsvp_params[:company_lead_id]
         @company_lead = CompanyLead.where(:first_name=>company_lead_rsvp_params[:first_name], :last_name=>company_lead_rsvp_params[:last_name], email_address: company_lead_rsvp_params[:email_address]).first_or_create do |company_lead|
+          byebug
           company_lead.first_name = company_lead_rsvp_params[:first_name]
           company_lead.last_name = company_lead_rsvp_params[:last_name]
           company_lead.email_address = company_lead_rsvp_params[:email_address]

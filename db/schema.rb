@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20171214233715) do
     t.integer "company_lead_id"
     t.integer "company_lead_rsvp_id"
     t.integer "confirmation"
+    t.integer "event_id"
     t.boolean "scanned", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

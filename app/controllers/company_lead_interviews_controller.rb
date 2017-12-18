@@ -22,7 +22,9 @@ class CompanyLeadInterviewsController < ApplicationController
           company_lead.phone_number = company_lead_interview_params[:phone_number]
           company_lead.licensed = company_lead_interview_params[:licensed]
         end
-        @company_lead_interview = CompanyLeadInterview.new(trainer_id: @first_free_trainer.id, date: company_lead_interview_params[:date], location: company_lead_interview_params[:location], company_lead_id: @company_lead.id)
+        byebug
+        @title = "#{@company_lead.first_name} #{@company_lead.last_name} interview with #{@first_free_trainer.first_name} #{@first_free_trainer.last_name}"
+        @company_lead_interview = CompanyLeadInterview.new(trainer_id: @first_free_trainer.id, title: @title, date: company_lead_interview_params[:date], location: "Bohemia Realty Group, 2101 Frederick Douglass Boulevard, New York, NY 10026", company_lead_id: @company_lead.id)
       end
 
       if @company_lead_interview.save
