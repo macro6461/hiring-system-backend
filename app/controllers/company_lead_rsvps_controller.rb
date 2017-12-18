@@ -19,8 +19,15 @@ class CompanyLeadRsvpsController < ApplicationController
           company_lead.phone_number = company_lead_rsvp_params[:phone_number]
           company_lead.licensed = company_lead_rsvp_params[:licensed]
         end
-
-        @company_lead_rsvp = CompanyLeadInterview.new(title: company_lead_rsvp_params[:title], trainer_id: company_lead_rsvp_params[:trainer_id], date: company_lead_rsvp_params[:date], location: company_lead_rsvp_params[:location], company_lead_id: @company_lead.id)
+        @event = Event.find_by(title: company_lead_rsvp_params[:event_title])
+        byebug
+        @company_lead_rsvp = CompanyLeadRsvp.where(:company_lead_id=>@company_lead.id).first_or_create do |company_lead_rsvp|
+          company_lead_rsvp.event_id = @event.id
+          company_lead_rsvp.title = @event.title
+          company_lead_rsvp.date = @event.date
+          company_lead_rsvp.location = @event.location
+          company_lead_rsvp.company_lead_id= @company_lead.id
+        end
       end
       if @company_lead_rsvp.save
         render json: {company_lead_rsvp: @company_lead_rsvp}
@@ -47,7 +54,7 @@ class CompanyLeadRsvpsController < ApplicationController
     private
 
     def company_lead_rsvp_params
-      params.permit(:title, :date, :description :location, :company_lead_id, :email_address, :first_name, :last_name, :phone_number, :licensed, :event_id)
+      params.permit(:title, :event_title, :date, :description, :location, :company_lead_id, :email_address, :first_name, :last_name, :phone_number, :licensed, :event_id)
     end
 
 end

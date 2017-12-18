@@ -72,7 +72,7 @@
 
 
 #CompanyLeads
-    jane = CompanyLead.create(first_name: "Jane", last_name: "Doe", email_address: "jane@doe.com", phone_number: "221-221-2221", licensed: true)
+CompanyLead.create(first_name: "Jane", last_name: "Doe", email_address: "jane@doe.com", phone_number: "221-221-2221", licensed: true)
 
 CompanyLead.create(first_name: "Paul", last_name: "Bunion", email_address: "paul@bunion.com", phone_number: "221-333-2221", licensed: false)
 
@@ -86,11 +86,11 @@ CompanyLead.create(first_name: "Joe", last_name: "Dileo", email_address: "joe@di
 
 
 #CompanyLeadRsvps
-    CompanyLeadRsvp.create(title: "Bohemia Realty Group February Hiring Event", date: "Wednesday, February 21st, 7-8:30pm", description: "come to hiring event in december", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", company_lead_id: 1, event_id: 1)
-
-    CompanyLeadRsvp.create(title: "Bohemia Realty Group February Hiring Event", date: "Wednesday, February 21st, 7-8:30pm", description: "come to hiring event in december", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", company_lead_id: 2, event_id: 1)
-
-    CompanyLeadRsvp.create(title: "Bohemia Realty Group March Hiring Event", date: "Wednesday, March 21st, 7-8:30pm", description: "come to hiring event in december", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", company_lead_id: 3, event_id: 2)
+    # CompanyLeadRsvp.create(title: "Bohemia Realty Group February Hiring Event", date: "Wednesday, February 21st, 7-8:30pm", description: "come to hiring event in december", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", company_lead_id: 1, event_id: 1)
+    #
+    # CompanyLeadRsvp.create(title: "Bohemia Realty Group February Hiring Event", date: "Wednesday, February 21st, 7-8:30pm", description: "come to hiring event in december", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", company_lead_id: 2, event_id: 1)
+    #
+    # CompanyLeadRsvp.create(title: "Bohemia Realty Group March Hiring Event", date: "Wednesday, March 21st, 7-8:30pm", description: "come to hiring event in december", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", company_lead_id: 3, event_id: 2)
 
 
 #TrainerLeadRsvps

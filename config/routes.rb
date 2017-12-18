@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :trainer_leads
   resources :company_lead_rsvp_tickets
   resources :trainer_lead_rsvp_tickets
+  resources :events
 end
