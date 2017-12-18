@@ -11,7 +11,7 @@ class TrainerLeadsController < ApplicationController
     end
 
     def create
-      byebug
+
       @trainer_lead = TrainerLead.new(trainer_lead_params)
       if @trainer_lead.save
         render json: {trainer_lead: @trainer_lead}

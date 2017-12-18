@@ -12,7 +12,7 @@ class TrainerLeadRsvpTicketsController < ApplicationController
     end
 
     def create
-      byebug
+
       @trainer_lead_ticket = TrainerLeadRsvpTicket.new(trainer_lead_ticket_params)
       if @trainer_lead_ticket.save
         render json: {trainer_lead_ticket: @trainer_lead_ticket}

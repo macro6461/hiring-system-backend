@@ -12,7 +12,7 @@ class CompanyLeadRsvpTicketsController < ApplicationController
     end
 
     def create
-      byebug
+
       @company_lead_rsvp_ticket = CompanyLeadRsvpTicket.new(company_lead_rsvp_ticket_params)
       if @company_lead_rsvp_ticket.save
         render json: {company_lead_rsvp_ticket: @company_lead_rsvp_ticket}

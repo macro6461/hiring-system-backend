@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(version: 20171214233715) do
     t.integer "confirmation"
     t.integer "barcode"
     t.boolean "scanned", default: false
+    t.integer "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "otp_secret_key"

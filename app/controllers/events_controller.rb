@@ -11,7 +11,7 @@ class EventsController < ApplicationController
     end
 
     def create
-      byebug
+
       @event = Event.new(event_params)
       if @event.save
         render json: {event: @event}

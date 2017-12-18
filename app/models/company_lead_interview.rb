@@ -21,16 +21,16 @@ class CompanyLeadInterview < ApplicationRecord
       is_hired = self.hire
       company_lead_interview_trainer = Trainer.all.find(self.trainer_id)
       if is_hired == "N/A" || is_hired == nil
-        byebug
+
         company_lead_interview_trainer.update(occupied: true)
         # return company_lead_interview_trainer
       elsif is_hired == "yes"
-        byebug
+
         company_lead_interview_trainer.update(occupied: false)
         self.update(trainer_id: nil)
         # return company_lead_interview_trainer
       elsif is_hired == "no"
-        byebug
+
         company_lead_interview_trainer.update(occupied: false)
         self.update(trainer_id: nil)
         # return company_lead_interview_trainer
@@ -51,17 +51,17 @@ class CompanyLeadInterview < ApplicationRecord
   end
 
   def check_leads
-    byebug
+
     Trainer.all.map do |trainer|
       if trainer.trainer_lead_interviews.length == 0 && trainer.company_lead_interviews.length == 0 && trainer.occupied == false
         trainer
       elsif trainer.trainer_lead_interviews.length > 0 || trainer.company_lead_interviews.length > 0 && trainer.occupied == true
         trainer
       elsif trainer.trainer_lead_interviews.length == 0 && trainer.company_lead_interviews.length == 0 && trainer.occupied == true
-        byebug
+
         trainer.update(occupied: false)
       elsif trainer.trainer_lead_interviews.length > 0 || trainer.company_lead_interviews.length > 0 && trainer.occupied == false
-        byebug
+
         trainer.update(occupied: true)
       end
     end

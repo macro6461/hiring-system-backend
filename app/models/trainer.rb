@@ -13,16 +13,16 @@ class Trainer < ApplicationRecord
 
   # def check_trainer
   #   if self.trainer_lead_interviews.length == 0 && self.company_lead_interviews.length == 0 && self.occupied == true
-  #     byebug
+  #
   #     self.update(occupied: false)
   #   elsif self.trainer_lead_interviews.length == 0 && self.company_lead_interviews.length == 0 && self.occupied == false
-  #     byebug
+  #
   #     return self
   #   elsif self.trainer_lead_interviews.length > 0 || self.company_lead_interviews.length > 0 && self.occupied == false
-  #     byebug
+  #
   #     self.update(occupied: true)
   #   elsif self.trainer_lead_interviews.length > 0 || self.company_lead_interviews.length > 0 && self.occupied == true
-  #     byebug
+  #
   #     return self
   #   end
   # end

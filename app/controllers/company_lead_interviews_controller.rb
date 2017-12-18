@@ -14,7 +14,7 @@ class CompanyLeadInterviewsController < ApplicationController
       @free_trainers = Trainer.all.where(:occupied=>false, :hold=>false).sort_by(&:updated_at)
       @first_free_trainer = @free_trainers.first
       if !company_lead_interview_params[:company_lead_id]
-        byebug
+
         @company_lead = CompanyLead.where(:first_name=>company_lead_interview_params[:first_name], :last_name=>company_lead_interview_params[:last_name], email_address: company_lead_interview_params[:email_address]).first_or_create do |company_lead|
           company_lead.first_name = company_lead_interview_params[:first_name]
           company_lead.last_name = company_lead_interview_params[:last_name]
@@ -22,7 +22,7 @@ class CompanyLeadInterviewsController < ApplicationController
           company_lead.phone_number = company_lead_interview_params[:phone_number]
           company_lead.licensed = company_lead_interview_params[:licensed]
         end
-        byebug
+
         @title = "#{@company_lead.first_name} #{@company_lead.last_name} interview with #{@first_free_trainer.first_name} #{@first_free_trainer.last_name}"
         @company_lead_interview = CompanyLeadInterview.new(trainer_id: @first_free_trainer.id, title: @title, date: company_lead_interview_params[:date], location: "Bohemia Realty Group, 2101 Frederick Douglass Boulevard, New York, NY 10026", company_lead_id: @company_lead.id)
       end
