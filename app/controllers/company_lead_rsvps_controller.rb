@@ -1,7 +1,7 @@
 class CompanyLeadRsvpsController < ApplicationController
 
   def index
-      @company_lead_rsvps = CompanyLeadRsvp.all
+      @company_lead_rsvps = CompanyLeadRsvp.all.sort_by(&:event_id)
       render json: @company_lead_rsvps
     end
 
@@ -21,8 +21,8 @@ class CompanyLeadRsvpsController < ApplicationController
         end
         @event = Event.find_by(title: company_lead_rsvp_params[:event_title])
         byebug
-        @company_lead_rsvp = CompanyLeadRsvp.where(:company_lead_id=>@company_lead.id).first_or_create do |company_lead_rsvp|
-          company_lead_rsvp.event_id = @event.id
+        @company_lead_rsvp = CompanyLeadRsvp.where(:company_lead_id=>@company_lead.id, :event_id=>@event.id).first_or_create do |company_lead_rsvp|
+
           company_lead_rsvp.title = @event.title
           company_lead_rsvp.date = @event.date
           company_lead_rsvp.location = @event.location

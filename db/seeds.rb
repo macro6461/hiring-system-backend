@@ -80,10 +80,9 @@ CompanyLead.create(first_name: "Joe", last_name: "Dileo", email_address: "joe@di
 
 
 #TrainerLeads
-  TrainerLead.create(first_name: "Carrie", last_name: "Fischer", email_address: "joe@dileo.com", phone_number: "221-234-2221", licensed: true, trainer_id: 1, interview_trainer_id: nil)
+TrainerLead.create(first_name: "Carrie", last_name: "Fischer", email_address: "joe@dileo.com", phone_number: "221-234-2221", licensed: true, trainer_id: 1, interview_trainer_id: nil)
 
-  TrainerLead.create(first_name: "Susan", last_name: "Sarandon", email_address: "joe@dileo.com", phone_number: "111-234-2221", licensed: false, trainer_id: 1, interview_trainer_id: nil)
-
+TrainerLead.create(first_name: "Susan", last_name: "Sarandon", email_address: "joe@dileo.com", phone_number: "111-234-2221", licensed: false, trainer_id: 1, interview_trainer_id: nil)
 
 #CompanyLeadRsvps
     # CompanyLeadRsvp.create(title: "Bohemia Realty Group February Hiring Event", date: "Wednesday, February 21st, 7-8:30pm", description: "come to hiring event in december", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", company_lead_id: 1, event_id: 1)
