@@ -11,7 +11,6 @@ class TrainerLeadRsvpsController < ApplicationController
     end
 
     def create
-
       @trainer_lead_rsvp = TrainerLeadRsvp.new(trainer_lead_rsvp_params)
       if @trainer_lead_rsvp.save
         render json: {trainer_lead_rsvp: @trainer_lead_rsvp}

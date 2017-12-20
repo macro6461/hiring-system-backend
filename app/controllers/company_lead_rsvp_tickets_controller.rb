@@ -13,7 +13,9 @@ class CompanyLeadRsvpTicketsController < ApplicationController
 
     def create
 
-      @company_lead_rsvp_ticket = CompanyLeadRsvpTicket.new(company_lead_rsvp_ticket_params)
+      @company_lead = CompanyLead.where(:first_name=>params[:first_name], :last_name=>params[:last_name]).first
+    
+      @company_lead_rsvp_ticket = CompanyLeadRsvpTicket.where(:otp_secret_key=>params[:otp_secret_key]).first || CompanyLeadRsvpTicket.where(:company_lead_id=>@company_lead.id).first
       if @company_lead_rsvp_ticket.save
         render json: {company_lead_rsvp_ticket: @company_lead_rsvp_ticket}
       else
@@ -22,9 +24,10 @@ class CompanyLeadRsvpTicketsController < ApplicationController
     end
 
     def update
+
       @company_lead_rsvp_ticket = CompanyLeadRsvpTicket.find(params[:id])
-      if @company_lead_rsvp_ticket.update(company_lead_rsvp_ticket_params)
-        render json: @company_lead_rsvp_ticket
+      if @company_lead_rsvp_ticket.update(scanned: params[:scanned])
+        render json: {company_lead_rsvp_ticket: @company_lead_rsvp_ticket}
       else
         render json: {error: @company_lead_rsvp_ticket.errors.messages.first[1][0]}, status: 406
       end
@@ -39,7 +42,7 @@ class CompanyLeadRsvpTicketsController < ApplicationController
     private
 
     def company_lead_rsvp_ticket_params
-      params.permit(:title, :date, :description, :location, :company_lead_id, :company_lead_rsvp_id, :confirmation, :barcode, :scanned)
+      params.permit(:first_name, :last_name, :otp_secret_key, :title, :date, :description, :location, :company_lead_id, :company_lead_rsvp_id, :confirmation, :barcode, :scanned)
     end
 
 end
