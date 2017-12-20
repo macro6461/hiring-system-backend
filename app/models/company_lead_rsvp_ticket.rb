@@ -6,4 +6,12 @@ class CompanyLeadRsvpTicket < ApplicationRecord
 
   has_one_time_password
 
+  after_save :change_scanned_for_parent_rsvp
+
+  def change_scanned_for_parent_rsvp
+    self.company_lead_rsvp.update(checked_in: self.scanned)
+  end
+
+
+
 end
