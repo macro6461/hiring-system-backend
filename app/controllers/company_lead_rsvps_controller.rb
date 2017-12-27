@@ -13,7 +13,7 @@ class CompanyLeadRsvpsController < ApplicationController
     def create
       if !company_lead_rsvp_params[:company_lead_id]
         @company_lead = CompanyLead.where(:first_name=>company_lead_rsvp_params[:first_name], :last_name=>company_lead_rsvp_params[:last_name], email_address: company_lead_rsvp_params[:email_address]).first_or_create do |company_lead|
-           
+
           company_lead.first_name = company_lead_rsvp_params[:first_name]
           company_lead.last_name = company_lead_rsvp_params[:last_name]
           company_lead.email_address = company_lead_rsvp_params[:email_address]
@@ -21,9 +21,7 @@ class CompanyLeadRsvpsController < ApplicationController
           company_lead.licensed = company_lead_rsvp_params[:licensed]
         end
         @event = Event.find_by(title: company_lead_rsvp_params[:event_title])
-
         @company_lead_rsvp = CompanyLeadRsvp.where(:company_lead_id=>@company_lead.id, :event_id=>@event.id).first_or_create do |company_lead_rsvp|
-
           company_lead_rsvp.title = @event.title
           company_lead_rsvp.date = @event.date
           company_lead_rsvp.location = @event.location
@@ -31,6 +29,22 @@ class CompanyLeadRsvpsController < ApplicationController
         end
       end
       if @company_lead_rsvp.save
+        @company_lead_rsvp_ticket = @company_lead_rsvp.company_lead_rsvp_ticket
+        respond_to do |format|
+          if  @company_lead_rsvp_ticket.save
+          byebug
+            # Tell the UserMailer to send a welcome email after save
+            CompanyLeadRsvpTicketMailer.with(company_lead_rsvp_ticket: @company_lead_rsvp_ticket).company_lead_rsvp_ticket(@company_lead_rsvp_ticket).deliver_now
+
+            format.html { redirect_to(@company_lead, notice: 'Company Lead was successfully created.') }
+            format.json { render json: @company_lead, status: :created, location: @company_lead }
+            # render json: {company_lead: @company_lead}
+          else
+            format.html { render action: 'new' }
+            format.json { render json: @company_lead.errors, status: :unprocessable_entity }
+            render json: {error: @company_lead.errors.messages.first}, status: 406
+          end
+        end
         render json: {company_lead_rsvp: @company_lead_rsvp}
       else
         render json: {error: @company_lead_rsvp.errors.messages.first}, status: 406

@@ -12,15 +12,28 @@ class CompanyLeadRsvpTicketsController < ApplicationController
     end
 
     def create
-
+      byebug
       @company_lead = CompanyLead.where(:first_name=>params[:first_name], :last_name=>params[:last_name]).first
-    
+
       @company_lead_rsvp_ticket = CompanyLeadRsvpTicket.where(:otp_secret_key=>params[:otp_secret_key]).first || CompanyLeadRsvpTicket.where(:company_lead_id=>@company_lead.id).first
-      if @company_lead_rsvp_ticket.save
-        render json: {company_lead_rsvp_ticket: @company_lead_rsvp_ticket}
-      else
-        render json: {error: @company_lead_rsvp_ticket.errors.messages.first}, status: 406
+      respond_to do |format|
+        if @company_lead_rsvp_ticket.save
+        byebug
+          # Tell the UserMailer to send a welcome email after save
+          CompanyLeadRsvpTicketMailer.with(company_lead_rsvp_ticket: @company_lead_rsvp_ticket).company_lead_rsvp_ticket(@company_lead_rsvp_ticket).deliver_now
+
+          format.html { redirect_to(@company_lead, notice: 'Company Lead was successfully created.') }
+          format.json { render json: @company_lead, status: :created, location: @company_lead }
+
+          # render json: {company_lead: @company_lead}
+        else
+          format.html { render action: 'new' }
+          format.json { render json: @company_lead.errors, status: :unprocessable_entity }
+
+          render json: {error: @company_lead.errors.messages.first}, status: 406
+        end
       end
+
     end
 
     def update
