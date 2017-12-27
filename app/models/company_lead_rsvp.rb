@@ -13,9 +13,9 @@ class CompanyLeadRsvp < ApplicationRecord
 
       self.company_lead_rsvp_ticket.destroy()
     else
-      
+
     # when company lead checks in (changes value of company_lead_rsvp.checked_in to true) destroy ticket (barcode can't be scanned)
-      rsvp_ticket = CompanyLeadRsvpTicket.where(:company_lead_id=>self.company_lead_id, :event_id=>self.event_id).first_or_create do |ticket|
+      @rsvp_ticket = CompanyLeadRsvpTicket.where(:company_lead_id=>self.company_lead_id, :event_id=>self.event_id).first_or_create do |ticket|
         ticket.title = self.title
         ticket.date = self.date
         ticket.description = self.description
@@ -25,6 +25,7 @@ class CompanyLeadRsvp < ApplicationRecord
 
         ticket.scanned = self.checked_in
       end
+      @rsvp_ticket.generate_qr(@rsvp_ticket.otp_secret_key)
       # rsvp_ticket.update(barcode: (RQRCode::QRCode.new(rsvp_ticket.provisioning_uri("hiring-system-backend"), :size => 7, :level => :h )))
     end
   end

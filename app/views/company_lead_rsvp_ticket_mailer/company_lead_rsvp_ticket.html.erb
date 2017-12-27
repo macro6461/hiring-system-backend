@@ -1,6 +1,7 @@
-<h1>Here is your RSVP ticket for the <%=@event.title%>!</h1>
+<h1>Hi <%= @company_lead_rsvp_ticket.company_lead[0].first_name%>! Here is your RSVP ticket for the <%=@event.title%>!</h1>
 <h2>Please bring this ticket to check in for the event.</h2>
 
 <p>
+  %img{src: generate_qr("http://www.leighhalliday.com"), class: "qr-code"}
   <%= @company_lead_rsvp_ticket.confirmation %>
 </p>
