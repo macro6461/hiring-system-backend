@@ -19,7 +19,7 @@ class CompanyLeadRsvpTicket < ApplicationRecord
     require 'barby/barcode/qr_code'
     require 'barby/outputter/png_outputter'
 
-    chart = GoogleQR.new(:data => "#{text}", :size => "100x100", :margin => 4, :error_correction => "L")
+    chart = GoogleQR.new(:data => "#{text}", :size => "500x500", :margin => 4, :error_correction => "L")
     byebug
     return chart.to_s
     # chart.render
