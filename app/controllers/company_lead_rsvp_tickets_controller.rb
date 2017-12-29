@@ -19,18 +19,18 @@ class CompanyLeadRsvpTicketsController < ApplicationController
       respond_to do |format|
         if @company_lead_rsvp_ticket.save
         byebug
-          # Tell the UserMailer to send a welcome email after save
+          # Tell the CompanyLeadRsvpTicketMailer to send an email after save containing the ticket
           CompanyLeadRsvpTicketMailer.with(company_lead_rsvp_ticket: @company_lead_rsvp_ticket).company_lead_rsvp_ticket(@company_lead_rsvp_ticket).deliver_now
 
-          format.html { redirect_to(@company_lead, notice: 'Company Lead was successfully created.') }
-          format.json { render json: @company_lead, status: :created, location: @company_lead }
+          format.html { redirect_to(@company_lead_rsvp_ticket, notice: 'Company Lead RSVP Ticket was successfully created.') }
+          format.json { render json: @company_lead_rsvp_ticket, status: :created, location: @company_lead_rsvp_ticket }
 
-          # render json: {company_lead: @company_lead}
+          # render json: {company_lead_rsvp_ticket: @company_lead_rsvp_ticket}
         else
           format.html { render action: 'new' }
-          format.json { render json: @company_lead.errors, status: :unprocessable_entity }
+          format.json { render json: @company_lead_rsvp_ticket.errors, status: :unprocessable_entity }
 
-          render json: {error: @company_lead.errors.messages.first}, status: 406
+          render json: {error: @company_lead_rsvp_ticket.errors.messages.first}, status: 406
         end
       end
 

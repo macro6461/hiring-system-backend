@@ -32,15 +32,14 @@ class CompanyLeadRsvpsController < ApplicationController
         @company_lead_rsvp_ticket = @company_lead_rsvp.company_lead_rsvp_ticket
         respond_to do |format|
           if  @company_lead_rsvp_ticket.save
-          byebug
-            # Tell the UserMailer to send a welcome email after save
+            # Tell the CompanyLeadRsvpTicketMailer to send an email after save containing the ticket
             CompanyLeadRsvpTicketMailer.with(company_lead_rsvp_ticket: @company_lead_rsvp_ticket).company_lead_rsvp_ticket(@company_lead_rsvp_ticket).deliver_now
 
             format.html
             format.json
             # render json: {company_lead: @company_lead}
           else
-            format.html 
+            format.html
             format.json
           end
         end
