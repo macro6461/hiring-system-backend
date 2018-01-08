@@ -14,7 +14,6 @@ class CompanyLeadRsvpTicketsController < ApplicationController
     def create
       byebug
       @company_lead = CompanyLead.where(:first_name=>params[:first_name], :last_name=>params[:last_name]).first
-
       @company_lead_rsvp_ticket = CompanyLeadRsvpTicket.where(:otp_secret_key=>params[:otp_secret_key]).first || CompanyLeadRsvpTicket.where(:company_lead_id=>@company_lead.id).first
       respond_to do |format|
         if @company_lead_rsvp_ticket.save
