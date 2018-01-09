@@ -21,7 +21,7 @@ class TrainerLeadRsvpsController < ApplicationController
           trainer_lead.licensed = trainer_lead_rsvp_params[:licensed]
         end
         @event = Event.find_by(title: trainer_lead_rsvp_params[:event_title])
-        
+
         @trainer_lead_rsvp = TrainerLeadRsvp.where(:trainer_lead_id=>@trainer_lead.id, :event_id=>@event.id).first_or_create do |trainer_lead_rsvp|
           trainer_lead_rsvp.title = @event.title
           trainer_lead_rsvp.date = @event.date
@@ -48,6 +48,7 @@ class TrainerLeadRsvpsController < ApplicationController
         render json: {error: [@trainer_lead_rsvp.errors.messages.first, @trainer_lead_rsvp_ticket.errors.messages.first]}, status: 406
       end
     end
+
 
     def update
       @trainer_lead_rsvp = TrainerLeadRsvp.find(params[:id])
