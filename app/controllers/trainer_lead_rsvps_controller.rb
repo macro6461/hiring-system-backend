@@ -19,6 +19,7 @@ class TrainerLeadRsvpsController < ApplicationController
           trainer_lead.email_address = trainer_lead_rsvp_params[:email_address]
           trainer_lead.phone_number = trainer_lead_rsvp_params[:phone_number]
           trainer_lead.licensed = trainer_lead_rsvp_params[:licensed]
+          trainer_lead.trainer_id = trainer_lead_rsvp_params[:trainer_id]
         end
         @event = Event.find_by(title: trainer_lead_rsvp_params[:event_title])
 
