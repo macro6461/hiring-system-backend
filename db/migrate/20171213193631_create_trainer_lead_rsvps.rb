@@ -3,10 +3,11 @@ class CreateTrainerLeadRsvps < ActiveRecord::Migration[5.1]
     create_table :trainer_lead_rsvps do |t|
       t.string :title
       t.string :date
-      t.string :description
+      t.string :description, default: nil
       t.string :location
       t.integer :trainer_lead_id
-      t.integer :event_id
+      t.integer :event_id, default: nil
+      t.integer :trainer_id, default: nil
       t.boolean :checked_in, default: false
 
       t.timestamps

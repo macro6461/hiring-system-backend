@@ -1,0 +1,2 @@
+class TrainerLeadRsvpMailer < ApplicationMailer
+end

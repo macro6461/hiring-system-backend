@@ -23,7 +23,6 @@ class TrainerLeadInterview < ApplicationRecord
       trainer_lead_interview_trainer = Trainer.all.find(self.trainer_id)
       if is_hired == "N/A"
         trainer_lead_interview_trainer.update(occupied: true)
-
         # return trainer_lead_interview_trainer
       elsif is_hired == "yes"
         trainer_lead_interview_trainer.update(occupied: false)
@@ -38,7 +37,7 @@ class TrainerLeadInterview < ApplicationRecord
 
   def update_trainer_lead_interview_trainer_id
     if self.trainer_id
-      self.trainer_lead.update(interview_trainer_id: self.trainer_id)
+      self.trainer_lead.update(trainer_id: self.trainer_id)
     end
   end
 
@@ -57,7 +56,6 @@ class TrainerLeadInterview < ApplicationRecord
   end
 
   def check_leads
-
     Trainer.all.map do |trainer|
       if trainer.trainer_lead_interviews.length == 0 && trainer.company_lead_interviews.length == 0 && trainer.occupied == false
         trainer

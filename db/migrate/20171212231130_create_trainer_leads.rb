@@ -9,7 +9,6 @@ class CreateTrainerLeads < ActiveRecord::Migration[5.1]
       t.boolean :company_purchased, default: false
       t.string :hire, default: "N/A"
       t.integer :trainer_id
-      t.integer :interview_trainer_id, default: nil
       t.timestamps
     end
   end

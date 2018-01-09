@@ -124,7 +124,6 @@ ActiveRecord::Schema.define(version: 20171214233715) do
     t.boolean "company_purchased", default: false
     t.string "hire", default: "N/A"
     t.integer "trainer_id"
-    t.integer "interview_trainer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

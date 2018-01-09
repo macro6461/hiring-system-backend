@@ -8,33 +8,33 @@
 
 
 #Trainers
-    Trainer.create(first_name: "Brian", last_name: "Letendre", email_address: "brian@bohemiarealtygroup.com", phone_number: "917-282-7998", url: "www.brians-unique-url.com", occupied: false, hold: false)
+    Trainer.create(first_name: "brian", last_name: "letendre", email_address: "brian@bohemiarealtygroup.com", phone_number: "917-282-7998", url: "www.brians-unique-url.com", occupied: false, hold: false)
 
-    Trainer.create(first_name: "Corey", last_name: "Wright", email_address: "corey@bohemiarealtygroup.com", phone_number: "917-370-6394", url: "www.lucys-unique-url.com", occupied: false, hold: false)
+    Trainer.create(first_name: "corey", last_name: "wright", email_address: "corey@bohemiarealtygroup.com", phone_number: "917-370-6394", url: "www.lucys-unique-url.com", occupied: false, hold: false)
 
-    Trainer.create(first_name: "Dan", last_name: "Cohen", email_address: "dan@bohemiarealtygroup.com", phone_number: "347-528-5436", url: "www.lucys-unique-url.com", occupied: false, hold: false)
+    Trainer.create(first_name: "dan", last_name: "cohen", email_address: "dan@bohemiarealtygroup.com", phone_number: "347-528-5436", url: "www.lucys-unique-url.com", occupied: false, hold: false)
 
-    Trainer.create(first_name: "David", last_name: "Ellis", email_address: "david@bohemiarealtygroup.com", phone_number: "917-319-5471", url: "www.lucys-unique-url.com", occupied: false, hold: false)
+    Trainer.create(first_name: "david", last_name: "ellis", email_address: "david@bohemiarealtygroup.com", phone_number: "917-319-5471", url: "www.lucys-unique-url.com", occupied: false, hold: false)
 
-    Trainer.create(first_name: "Emily", last_name: "Ackerman", email_address: "emily@bohemiarealtygroup.com", phone_number: "917-975-0619", url: "www.lucys-unique-url.com", occupied: false, hold: false)
+    Trainer.create(first_name: "emily", last_name: "ackerman", email_address: "emily@bohemiarealtygroup.com", phone_number: "917-975-0619", url: "www.lucys-unique-url.com", occupied: false, hold: false)
 
-    Trainer.create(first_name: "Daoud", last_name: "Heidami", email_address: "daoud@bohemiarealtygroup.com", phone_number: "917-627-9320", url: "www.lucys-unique-url.com", occupied: false, hold: false)
+    Trainer.create(first_name: "daoud", last_name: "heidami", email_address: "daoud@bohemiarealtygroup.com", phone_number: "917-627-9320", url: "www.lucys-unique-url.com", occupied: false, hold: false)
 
-    Trainer.create(first_name: "Jessica", last_name: "Wagner", email_address: "jess@bohemiarealtygroup.com", phone_number: "973-615-4750", url: "www.lucys-unique-url.com", occupied: false, hold: false)
+    Trainer.create(first_name: "jessica", last_name: "wagner", email_address: "jess@bohemiarealtygroup.com", phone_number: "973-615-4750", url: "www.lucys-unique-url.com", occupied: false, hold: false)
 
-    Trainer.create(first_name: "Sam", last_name: "Kiernan", email_address: "slkiernan@bohemiarealtygroup.com", phone_number: "617-771-4336", url: "www.lucys-unique-url.com", occupied: false, hold: false)
+    Trainer.create(first_name: "sam", last_name: "kiernan", email_address: "slkiernan@bohemiarealtygroup.com", phone_number: "617-771-4336", url: "www.lucys-unique-url.com", occupied: false, hold: false)
 
-    Trainer.create(first_name: "Jill", last_name: "Ginsberg", email_address: "jill@bohemiarealtygroup.com", phone_number: "781-454-7453", url: "www.lucys-unique-url.com", occupied: false, hold: false)
+    Trainer.create(first_name: "jill", last_name: "ginsberg", email_address: "jill@bohemiarealtygroup.com", phone_number: "781-454-7453", url: "www.lucys-unique-url.com", occupied: false, hold: false)
 
-    Trainer.create(first_name: "Kevin", last_name: "Martinez", email_address: "kmartinez@bohemiarealtygroup.com", phone_number: "806-441-2801", url: "www.lucys-unique-url.com", occupied: false, hold: false)
+    Trainer.create(first_name: "kevin", last_name: "martinez", email_address: "kmartinez@bohemiarealtygroup.com", phone_number: "806-441-2801", url: "www.lucys-unique-url.com", occupied: false, hold: false)
 
-    Trainer.create(first_name: "Lindsay", last_name: "Nelms", email_address: "lindsay@bohemiarealtygroup.com", phone_number: "603-312-0319", url: "www.lucys-unique-url.com", occupied: false, hold: false)
+    Trainer.create(first_name: "lindsay", last_name: "nelms", email_address: "lindsay@bohemiarealtygroup.com", phone_number: "603-312-0319", url: "www.lucys-unique-url.com", occupied: false, hold: false)
 
-    Trainer.create(first_name: "Erin", last_name: "Whitney", email_address: "erin@bohemiarealtygroup.com", phone_number: "917-940-5150", url: "www.lucys-unique-url.com", occupied: false, hold: false)
+    Trainer.create(first_name: "erin", last_name: "whitney", email_address: "erin@bohemiarealtygroup.com", phone_number: "917-940-5150", url: "www.lucys-unique-url.com", occupied: false, hold: false)
 
-    Trainer.create(first_name: "Raphael", last_name: "Fetta", email_address: "raphael@bohemiarealtygroup.com", phone_number: "917-519-2648", url: "www.lucys-unique-url.com", occupied: false, hold: false)
+    Trainer.create(first_name: "raphael", last_name: "fetta", email_address: "raphael@bohemiarealtygroup.com", phone_number: "917-519-2648", url: "www.lucys-unique-url.com", occupied: false, hold: false)
 
-    Trainer.create(first_name: "Jeremiah", last_name: "Wiggins", email_address: "jeremiah@bohemiarealtygroup.com", phone_number: "917-596-2124", url: "www.lucys-unique-url.com", occupied: false, hold: false)
+    Trainer.create(first_name: "jeremiah", last_name: "wiggins", email_address: "jeremiah@bohemiarealtygroup.com", phone_number: "917-596-2124", url: "www.lucys-unique-url.com", occupied: false, hold: false)
 
 
 #January Event
@@ -79,10 +79,10 @@ CompanyLead.create(first_name: "Paul", last_name: "Bunion", email_address: "paul
 CompanyLead.create(first_name: "Joe", last_name: "Dileo", email_address: "joe@dileo.com", phone_number: "221-888-2221", licensed: true)
 
 
-#TrainerLeads
-TrainerLead.create(first_name: "Carrie", last_name: "Fischer", email_address: "joe@dileo.com", phone_number: "221-234-2221", licensed: true, trainer_id: 1, interview_trainer_id: nil)
-
-TrainerLead.create(first_name: "Susan", last_name: "Sarandon", email_address: "joe@dileo.com", phone_number: "111-234-2221", licensed: false, trainer_id: 1, interview_trainer_id: nil)
+# #TrainerLeads
+# TrainerLead.create(first_name: "Carrie", last_name: "Fischer", email_address: "joe@dileo.com", phone_number: "221-234-2221", licensed: true, trainer_id: 1, interview_trainer_id: nil)
+#
+# TrainerLead.create(first_name: "Susan", last_name: "Sarandon", email_address: "joe@dileo.com", phone_number: "111-234-2221", licensed: false, trainer_id: 1, interview_trainer_id: nil)
 
 #CompanyLeadRsvps
     # CompanyLeadRsvp.create(title: "Bohemia Realty Group February Hiring Event", date: "Wednesday, February 21st, 7-8:30pm", description: "come to hiring event in december", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", company_lead_id: 1, event_id: 1)
@@ -92,17 +92,17 @@ TrainerLead.create(first_name: "Susan", last_name: "Sarandon", email_address: "j
     # CompanyLeadRsvp.create(title: "Bohemia Realty Group March Hiring Event", date: "Wednesday, March 21st, 7-8:30pm", description: "come to hiring event in december", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", company_lead_id: 3, event_id: 2)
 
 
-#TrainerLeadRsvps
-    TrainerLeadRsvp.create(title: "Bohemia Realty Group March Hiring Event", date: "Wednesday, March 21st, 7-8:30pm", description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", trainer_lead_id: 1, event_id: 2)
-
-    TrainerLeadRsvp.create(title: "Bohemia Realty Group March Hiring Event", date: "Wednesday, March 21st, 7-8:30pm", description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", trainer_lead_id: 2, event_id: 3)
-
-#TrainerLeadInterviews
-    TrainerLeadInterview.create(title: "Brian Interview with Carrie Fischer", date: "Thursday, January 11th, 3-4:00pm", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", trainer_lead_id: 1)
-
-    TrainerLeadInterview.create(title: "Brian Interview with Susan Sarandon", date: "Friday, January 12th, 2-3:00pm", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", trainer_lead_id: 2) #no trainer yet
-
-#CompanyLeadInterviews
+# #TrainerLeadRsvps
+#     TrainerLeadRsvp.create(title: "Bohemia Realty Group March Hiring Event", date: "Wednesday, March 21st, 7-8:30pm", description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", trainer_lead_id: 1, event_id: 2)
+#
+#     TrainerLeadRsvp.create(title: "Bohemia Realty Group March Hiring Event", date: "Wednesday, March 21st, 7-8:30pm", description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", trainer_lead_id: 2, event_id: 3)
+#
+# #TrainerLeadInterviews
+#     TrainerLeadInterview.create(title: "Brian Interview with Carrie Fischer", date: "Thursday, January 11th, 3-4:00pm", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", trainer_lead_id: 1)
+#
+#     TrainerLeadInterview.create(title: "Brian Interview with Susan Sarandon", date: "Friday, January 12th, 2-3:00pm", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", trainer_lead_id: 2) #no trainer yet
+#
+# #CompanyLeadInterviews
   # CompanyLeadInterview.create(date: "Thursday, February 22nd, 2-3:00pm", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", company_lead_id: 1) #no trainer yet
   #
   # CompanyLeadInterview.create(date: "Friday, February 23nd, 1-2:00pm", location: "2101 Frederick Douglass Boulevard, New York, NY 10026", company_lead_id: 3) #no trainer yet

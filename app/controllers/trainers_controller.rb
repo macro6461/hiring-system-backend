@@ -12,12 +12,20 @@ class TrainersController < ApplicationController
 
     def create
 
-      @trainer = Trainer.new(trainer_params)
+      @trainer = Trainer.where(:first_name => trainer_params[:first_name], :last_name => trainer_params[:last_name]).first_or_create do |trainer|
+        trainer.email_address = trainer_params[:email_address]
+        trainer.phone_number = trainer_params[:phone_number]
+        trainer.url = trainer_params[:url]
+        trainer.occupied = trainer_params[:occupied]
+        trainer.hold = trainer_params[:hold]
+      end
+
       if @trainer.save
         render json: {trainer: @trainer}
       else
         render json: {error: @trainer.errors.messages.first}, status: 406
       end
+
     end
 
     def update

@@ -15,7 +15,7 @@ class CompanyLeadInterviewsController < ApplicationController
       @free_trainers = Trainer.all.where(:occupied=>false, :hold=>false).sort_by(&:updated_at)
       @first_free_trainer = @free_trainers.first
       if !company_lead_interview_params[:company_lead_id]
-        @company_lead = CompanyLead.where(:first_name=>company_lead_interview_params[:first_name], :last_name=>company_lead_interview_params[:last_name], email_address: company_lead_interview_params[:email_address]).first_or_create do |company_lead|
+        @company_lead = CompanyLead.where(:first_name=>company_lead_interview_params[:first_name], :last_name=>company_lead_interview_params[:last_name], :email_address=>company_lead_interview_params[:email_address]).first_or_create do |company_lead|
           company_lead.first_name = company_lead_interview_params[:first_name]
           company_lead.last_name = company_lead_interview_params[:last_name]
           company_lead.email_address = company_lead_interview_params[:email_address]
@@ -54,7 +54,7 @@ class CompanyLeadInterviewsController < ApplicationController
             # render json: {error: @company_lead_interview.errors.messages.first}, status: 406
           end
         end
-      
+
         render json: {company_lead_interview: @company_lead_interview}
       else
         render json: {error: @company_lead_interview.errors.messages.first}, status: 406
