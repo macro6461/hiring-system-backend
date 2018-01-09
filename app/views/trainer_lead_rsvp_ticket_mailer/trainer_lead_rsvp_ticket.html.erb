@@ -1,0 +1,9 @@
+<h1>Hi <%= @trainer_lead_rsvp_ticket.trainer_lead[0].first_name%>! Here is your RSVP ticket for the <%=@event.title%>!</h1>
+<h2>Please bring this ticket to check in for the event.</h2>
+  <%=image_tag("#{@trainer_lead_rsvp_ticket.generate_qr(@trainer_lead_rsvp_ticket.otp_secret_key)}", :alt => "qrcode")%> <br/>
+  <br />
+  <br />
+  <%=image_tag(image_url("https://bohemiarealtygroup.com/images/agents/312_Logo_for_Agents_without_Pictures.png"), :alt => "bohemia")%>
+<p>
+  <%= @trainer_lead_rsvp_ticket.confirmation %>
+</p>
