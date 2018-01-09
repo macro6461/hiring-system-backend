@@ -38,15 +38,20 @@ class CompanyLeadInterviewsController < ApplicationController
             # Tell the UserMailer to send a welcome email after save
             CompanyLeadInterviewMailer.with(@company_lead_interview).company_lead_interview(@company_lead_interview).deliver_now
 
-            format.html { redirect_to(@company_lead_interview, notice: 'Company Lead was successfully created.') }
-            format.json { render json: @company_lead_interview, status: :created, location: @company_lead_interview }
+            format.html
+            # { redirect_to(@company_lead_interview, notice: 'Company Lead was successfully created.') }
+            format.json
+            # { render json: @company_lead_interview, status: :created, location: @company_lead_interview }
 
             # render json: {company_lead: @company_lead_interview}
           else
-            format.html { render action: 'new' }
-            format.json { render json: @company_lead_interview.errors, status: :unprocessable_entity }
+            format.html
+            # { render action: 'new' }
+            format.json
+            # { render json: @company_lead_interview.errors, status: :unprocessable_entity }
 
-            render json: {error: @company_lead_interview.errors.messages.first}, status: 406
+
+            # render json: {error: @company_lead_interview.errors.messages.first}, status: 406
           end
         end
         byebug
