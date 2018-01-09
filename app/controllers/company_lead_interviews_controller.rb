@@ -33,7 +33,7 @@ class CompanyLeadInterviewsController < ApplicationController
       end
       if @company_lead_interview.save
         respond_to do |format|
-          byebug
+
           if @company_lead_interview.save
             # Tell the UserMailer to send a welcome email after save
             CompanyLeadInterviewMailer.with(@company_lead_interview).company_lead_interview(@company_lead_interview).deliver_now
@@ -54,7 +54,7 @@ class CompanyLeadInterviewsController < ApplicationController
             # render json: {error: @company_lead_interview.errors.messages.first}, status: 406
           end
         end
-        byebug
+      
         render json: {company_lead_interview: @company_lead_interview}
       else
         render json: {error: @company_lead_interview.errors.messages.first}, status: 406
