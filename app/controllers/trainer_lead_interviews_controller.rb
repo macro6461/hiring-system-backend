@@ -16,7 +16,7 @@ class TrainerLeadInterviewsController < ApplicationController
       @first_free_trainer = @free_trainers.first
       if !params[:trainer_lead_id]
         @trainer_lead = TrainerLead.where(:first_name=>trainer_lead_interview_params[:first_name], :last_name=>trainer_lead_interview_params[:last_name], :email_address=>trainer_lead_interview_params[:email_address]).first_or_create do |trainer_lead|
-        
+
           trainer_lead.first_name = trainer_lead_interview_params[:first_name]
           trainer_lead.last_name = trainer_lead_interview_params[:last_name]
           trainer_lead.email_address = trainer_lead_interview_params[:email_address]
@@ -30,9 +30,31 @@ class TrainerLeadInterviewsController < ApplicationController
 
       end
       if @trainer_lead_interview.save
+        respond_to do |format|
+
+          if @trainer_lead_interview.save
+            # Tell the UserMailer to send a welcome email after save
+            TrainerLeadInterviewMailer.with(@trainer_lead_interview).trainer_lead_interview(@trainer_lead_interview).deliver_now
+
+            format.html
+            # { redirect_to(@trainer_lead_interview, notice: 'Trainer Lead was successfully created.') }
+            format.json
+            # { render json: @trainer_lead_interview, status: :created, location: @trainer_lead_interview }
+
+            # render json: {trainer_lead: @trainer_lead_interview}
+          else
+            format.html
+            # { render action: 'new' }
+            format.json
+            # { render json: @trainer_lead_interview.errors, status: :unprocessable_entity }
+
+
+            # render json: {error: @trainer_lead_interview.errors.messages.first}, status: 406
+          end
+        end
+
         render json: {trainer_lead_interview: @trainer_lead_interview}
       else
-
         render json: {error: @trainer_lead_interview.errors.messages.first}, status: 406
       end
     end

@@ -13,6 +13,7 @@ class TrainerLeadRsvpsController < ApplicationController
     def create
       if !trainer_lead_rsvp_params[:trainer_lead_id]
         @trainer_lead = TrainerLead.where(:first_name=>trainer_lead_rsvp_params[:first_name], :last_name=>trainer_lead_rsvp_params[:last_name], email_address: trainer_lead_rsvp_params[:email_address]).first_or_create do |trainer_lead|
+          byebug
           trainer_lead.first_name = trainer_lead_rsvp_params[:first_name]
           trainer_lead.last_name = trainer_lead_rsvp_params[:last_name]
           trainer_lead.email_address = trainer_lead_rsvp_params[:email_address]
@@ -65,7 +66,7 @@ class TrainerLeadRsvpsController < ApplicationController
     private
 
     def trainer_lead_rsvp_params
-      params.permit(:title, :date, :description, :location, :trainer_lead_id, :event_id, :checked_in, :event_title)
+      params.permit(:email_address, :first_name, :last_name, :phone_number, :licensed, :trainer_id, :title, :date, :description, :location, :trainer_lead_id, :event_id, :checked_in, :event_title,  :trainer_lead_rsvp=>{})
     end
 
 end

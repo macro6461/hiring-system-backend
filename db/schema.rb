@@ -110,6 +110,7 @@ ActiveRecord::Schema.define(version: 20171214233715) do
     t.string "location"
     t.integer "trainer_lead_id"
     t.integer "event_id"
+    t.integer "trainer_id"
     t.boolean "checked_in", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
