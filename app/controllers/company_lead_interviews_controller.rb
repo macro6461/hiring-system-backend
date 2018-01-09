@@ -11,10 +11,10 @@ class CompanyLeadInterviewsController < ApplicationController
     end
 
     def create
+
       @free_trainers = Trainer.all.where(:occupied=>false, :hold=>false).sort_by(&:updated_at)
       @first_free_trainer = @free_trainers.first
       if !company_lead_interview_params[:company_lead_id]
-
         @company_lead = CompanyLead.where(:first_name=>company_lead_interview_params[:first_name], :last_name=>company_lead_interview_params[:last_name], email_address: company_lead_interview_params[:email_address]).first_or_create do |company_lead|
           company_lead.first_name = company_lead_interview_params[:first_name]
           company_lead.last_name = company_lead_interview_params[:last_name]
@@ -22,12 +22,34 @@ class CompanyLeadInterviewsController < ApplicationController
           company_lead.phone_number = company_lead_interview_params[:phone_number]
           company_lead.licensed = company_lead_interview_params[:licensed]
         end
-
         @title = "#{@company_lead.first_name} #{@company_lead.last_name} interview with #{@first_free_trainer.first_name} #{@first_free_trainer.last_name}"
-        @company_lead_interview = CompanyLeadInterview.new(trainer_id: @first_free_trainer.id, title: @title, date: company_lead_interview_params[:date], location: "Bohemia Realty Group, 2101 Frederick Douglass Boulevard, New York, NY 10026", company_lead_id: @company_lead.id)
+        @company_lead_interview = CompanyLeadInterview.where(:company_lead_id=>@company_lead.id).first_or_create do |company_lead_interview|
+          company_lead_interview.trainer_id = @first_free_trainer.id
+          company_lead_interview.title =  @title
+          company_lead_interview.date = company_lead_interview_params[:date]
+          company_lead_interview.location =  "Bohemia Realty Group, 2101 Frederick Douglass Boulevard, New York, NY 10026"
+          company_lead_interview.company_lead_id = @company_lead.id
+        end
       end
-
       if @company_lead_interview.save
+        respond_to do |format|
+          byebug
+          if @company_lead_interview.save
+            # Tell the UserMailer to send a welcome email after save
+            CompanyLeadInterviewMailer.with(@company_lead_interview).company_lead_interview(@company_lead_interview).deliver_now
+
+            format.html { redirect_to(@company_lead_interview, notice: 'Company Lead was successfully created.') }
+            format.json { render json: @company_lead_interview, status: :created, location: @company_lead_interview }
+
+            # render json: {company_lead: @company_lead_interview}
+          else
+            format.html { render action: 'new' }
+            format.json { render json: @company_lead_interview.errors, status: :unprocessable_entity }
+
+            render json: {error: @company_lead_interview.errors.messages.first}, status: 406
+          end
+        end
+        byebug
         render json: {company_lead_interview: @company_lead_interview}
       else
         render json: {error: @company_lead_interview.errors.messages.first}, status: 406

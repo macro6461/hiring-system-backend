@@ -13,7 +13,6 @@ class CompanyLeadRsvpsController < ApplicationController
     def create
       if !company_lead_rsvp_params[:company_lead_id]
         @company_lead = CompanyLead.where(:first_name=>company_lead_rsvp_params[:first_name], :last_name=>company_lead_rsvp_params[:last_name], email_address: company_lead_rsvp_params[:email_address]).first_or_create do |company_lead|
-
           company_lead.first_name = company_lead_rsvp_params[:first_name]
           company_lead.last_name = company_lead_rsvp_params[:last_name]
           company_lead.email_address = company_lead_rsvp_params[:email_address]
@@ -34,7 +33,6 @@ class CompanyLeadRsvpsController < ApplicationController
           if  @company_lead_rsvp_ticket.save
             # Tell the CompanyLeadRsvpTicketMailer to send an email after save containing the ticket
             CompanyLeadRsvpTicketMailer.with(company_lead_rsvp_ticket: @company_lead_rsvp_ticket).company_lead_rsvp_ticket(@company_lead_rsvp_ticket).deliver_now
-
             format.html
             format.json
             # render json: {company_lead: @company_lead}
