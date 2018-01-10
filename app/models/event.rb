@@ -12,28 +12,46 @@ class Event < ApplicationRecord
 
   def filter_emails_attendee_or_absentee
 
-    attendees = self.company_lead_rsvps.where(checked_in: true)
-    absentees = self.company_lead_rsvps.where(checked_in: false)
+    company_attendees = self.company_lead_rsvps.where(checked_in: true)
+    trainer_attendees = self.trainer_lead_rsvps.where(checked_in: true)
+    company_absentees = self.company_lead_rsvps.where(checked_in: false)
+    trainer_absentees = self.trainer_lead_rsvps.where(checked_in: false)
 
-    attendees.map do |attendee|
-      byebug
-      attendent_lead = attendee.company_lead
-          # Tell the CompanyLeadRsvpTicketMailer to send an email after save containing the ticket
-          ThankYouMailer.with(attendent_lead: attendent_lead).thank_you(attendent_lead).deliver_now
-          # render json: {company_lead: @company_lead}
-
+    #COMPANY ATTENDEES
+    if company_attendees.length > 0
+      company_attendees.map do |company_attendee|
+        attendent_comp_lead = company_attendee.company_lead
+            # Tell the CompanyLeadRsvpTicketMailer to send an email after save containing the ticket
+        ThankYouMailer.with(attendent_comp_lead: attendent_comp_lead).thank_you(attendent_comp_lead).deliver_now
       end
+    end
 
-    absentees.map do |absentee|
-      byebug
-      absent_lead = absentee.company_lead
-          # Tell the CompanyLeadRsvpTicketMailer to send an email after save containing the ticket
-          SorryMailer.with(absentee: absent_lead).sorry(absent_lead).deliver_now
-
-          # render json: {company_lead: @company_lead}
-
+    #TRAINER ATTENDEES
+    if trainer_attendees.length > 0
+      trainer_attendees.map do |trainer_attendee|
+        attendent_train_lead = trainer_attendee.trainer_lead
+            # Tell the CompanyLeadRsvpTicketMailer to send an email after save containing the ticket
+        ThankYouMailer.with(attendent_train_lead: attendent_train_lead).thank_you(attendent_train_lead).deliver_now
       end
+    end
 
+    #COMPANY ABSENTEES
+    if company_absentees.length > 0
+      company_absentees.map do |company_absentee|
+        absent_comp_lead = company_absentee.company_lead
+            # Tell the CompanyLeadRsvpTicketMailer to send an email after save containing the ticket
+        SorryMailer.with(absent_comp_lead: absent_comp_lead).sorry(absent_comp_lead).deliver_now
+      end
+    end
+
+    #TRAINER ABSENTEES
+    if trainer_absentees.length > 0
+      trainer_absentees.map do |trainer_absentee|
+        absent_train_lead = trainer_absentee.trainer_lead
+            # Tell the CompanyLeadRsvpTicketMailer to send an email after save containing the ticket
+        SorryMailer.with(absent_train_lead: absent_train_lead).sorry(absent_train_lead).deliver_now
+      end
+    end
   end
 
 end

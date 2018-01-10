@@ -37,7 +37,7 @@
     Trainer.create(first_name: "jeremiah", last_name: "wiggins", email_address: "jeremiah@bohemiarealtygroup.com", phone_number: "917-596-2124", url: "www.lucys-unique-url.com", occupied: false, hold: false)
 
 
-Event.create(title: "Bohemia January Hiring Event", start_date: DateTime.new(2018, 01, 10, 04, 56, 0), end_date: DateTime.new(2018, 01, 10, 04, 56, 0), description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026")
+# Event.create(title: "Bohemia January Hiring Event", start_date: DateTime.new(2018, 01, 10, 04, 56, 0), end_date: DateTime.new(2018, 01, 10, 04, 56, 0), description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026")
 # Event.create(title: "Bohemia January Hiring Event", start_date: DateTime.new(2018, 01, 10, 04, 11, 0), end_date: DateTime.new(2018, 01, 10, 02, 47, 0), description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026")
 # Event.create(title: "Bohemia January Hiring Event", start_date: DateTime.new(2018, 01, 10, 02, 48, 0), end_date: DateTime.new(2018, 01, 10, 02, 48, 0), description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026")
 

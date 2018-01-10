@@ -1,7 +1,7 @@
 module CompanyLeadRsvpTicketsHelper
 
   def date(data)
-    byebug
+  
 
     day = "#{data}".split(" ")[0].split("-")[2]
     month = "#{data}".split(" ")[0].split("-")[1]
