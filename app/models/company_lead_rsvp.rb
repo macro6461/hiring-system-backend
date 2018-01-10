@@ -27,7 +27,7 @@ class CompanyLeadRsvp < ApplicationRecord
         ticket.scanned = self.checked_in
       end
       @rsvp_ticket.generate_qr(@rsvp_ticket.otp_secret_key)
-      # rsvp_ticket.update(barcode: (RQRCode::QRCode.new(rsvp_ticket.provisioning_uri("hiring-system-backend"), :size => 7, :level => :h )))
+
     end
   end
 
