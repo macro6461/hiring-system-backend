@@ -22,7 +22,8 @@ class CompanyLeadRsvpsController < ApplicationController
         @event = Event.find_by(title: company_lead_rsvp_params[:event_title])
         @company_lead_rsvp = CompanyLeadRsvp.where(:company_lead_id=>@company_lead.id, :event_id=>@event.id).first_or_create do |company_lead_rsvp|
           company_lead_rsvp.title = @event.title
-          company_lead_rsvp.date = @event.date
+          company_lead_rsvp.start_date = @event.start_date
+          company_lead_rsvp.end_date = @event.end_date
           company_lead_rsvp.location = @event.location
           company_lead_rsvp.company_lead_id= @company_lead.id
         end
@@ -65,7 +66,7 @@ class CompanyLeadRsvpsController < ApplicationController
     private
 
     def company_lead_rsvp_params
-      params.permit(:title, :event_title, :date, :description, :location, :company_lead_id, :email_address, :first_name, :last_name, :phone_number, :licensed, :event_id)
+      params.permit(:title, :event_title, :start_date, :end_date, :description, :location, :company_lead_id, :email_address, :first_name, :last_name, :phone_number, :licensed, :event_id)
     end
 
 end

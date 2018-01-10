@@ -2,7 +2,8 @@ class CreateTrainerLeadRsvpTickets < ActiveRecord::Migration[5.1]
   def change
     create_table :trainer_lead_rsvp_tickets do |t|
        t.string :title
-       t.string :date
+       t.datetime :start_date
+       t.datetime :end_date
        t.string :description
        t.string :location
        t.integer :trainer_lead_id

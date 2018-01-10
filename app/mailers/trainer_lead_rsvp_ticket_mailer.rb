@@ -4,9 +4,13 @@ class TrainerLeadRsvpTicketMailer < ApplicationMailer
   # with the following lookup:
   #
   #   en.company_lead_rsvp_ticket_mailer.company_lead_rsvp_ticket.subject
-  #
+
+  default from: 'noreply@bohemiarealtygroup.com'
+  include TrainerLeadRsvpTicketsHelper
+  add_template_helper(TrainerLeadRsvpTicketsHelper)
+
   def trainer_lead_rsvp_ticket(ticket)
-    
+
     @trainer_lead_rsvp_ticket = ticket
     @trainer_lead = @trainer_lead_rsvp_ticket.trainer_lead[0]
     @event = @trainer_lead_rsvp_ticket.event[0]

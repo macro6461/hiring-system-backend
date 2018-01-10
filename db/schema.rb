@@ -29,7 +29,8 @@ ActiveRecord::Schema.define(version: 20171214233715) do
 
   create_table "company_lead_rsvp_tickets", force: :cascade do |t|
     t.string "title"
-    t.string "date"
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.string "description"
     t.string "location"
     t.integer "company_lead_id"
@@ -44,7 +45,8 @@ ActiveRecord::Schema.define(version: 20171214233715) do
 
   create_table "company_lead_rsvps", force: :cascade do |t|
     t.string "title"
-    t.string "date"
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.string "description"
     t.string "location"
     t.integer "company_lead_id"
@@ -68,7 +70,8 @@ ActiveRecord::Schema.define(version: 20171214233715) do
 
   create_table "events", force: :cascade do |t|
     t.string "title"
-    t.string "date"
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.text "description"
     t.string "location"
     t.datetime "created_at", null: false
@@ -89,7 +92,8 @@ ActiveRecord::Schema.define(version: 20171214233715) do
 
   create_table "trainer_lead_rsvp_tickets", force: :cascade do |t|
     t.string "title"
-    t.string "date"
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.string "description"
     t.string "location"
     t.integer "trainer_lead_id"
@@ -105,7 +109,8 @@ ActiveRecord::Schema.define(version: 20171214233715) do
 
   create_table "trainer_lead_rsvps", force: :cascade do |t|
     t.string "title"
-    t.string "date"
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.string "description"
     t.string "location"
     t.integer "trainer_lead_id"

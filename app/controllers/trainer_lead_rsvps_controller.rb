@@ -25,7 +25,8 @@ class TrainerLeadRsvpsController < ApplicationController
 
         @trainer_lead_rsvp = TrainerLeadRsvp.where(:trainer_lead_id=>@trainer_lead.id, :event_id=>@event.id).first_or_create do |trainer_lead_rsvp|
           trainer_lead_rsvp.title = @event.title
-          trainer_lead_rsvp.date = @event.date
+          trainer_lead_rsvp.start_date = @event.start_date
+          trainer_lead_rsvp.end_date = @event.end_date
           trainer_lead_rsvp.location = @event.location
           trainer_lead_rsvp.trainer_lead_id= @trainer_lead.id
         end
@@ -69,7 +70,7 @@ class TrainerLeadRsvpsController < ApplicationController
     private
 
     def trainer_lead_rsvp_params
-      params.permit(:email_address, :first_name, :last_name, :phone_number, :licensed, :trainer_id, :title, :date, :description, :location, :trainer_lead_id, :event_id, :checked_in, :event_title,  :trainer_lead_rsvp=>{})
+      params.permit(:email_address, :first_name, :last_name, :phone_number, :licensed, :trainer_id, :title, :start_date, :end_date, :description, :location, :trainer_lead_id, :event_id, :checked_in, :event_title,  :trainer_lead_rsvp=>{})
     end
 
 end

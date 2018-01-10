@@ -13,7 +13,8 @@ class TrainerLeadRsvp < ApplicationRecord
       rsvp_ticket = TrainerLeadRsvpTicket.where(:trainer_lead_id=>self.trainer_lead_id, :event_id=>self.event_id).first_or_create do |ticket|
 
         ticket.title = self.title
-        ticket.date = self.date
+        ticket.start_date = self.start_date
+        ticket.end_date = self.end_date
         ticket.description = self.description
         ticket.location = self.location
         ticket.trainer_lead_rsvp_id = self.id

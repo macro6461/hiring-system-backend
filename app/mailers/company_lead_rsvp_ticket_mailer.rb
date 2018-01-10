@@ -4,7 +4,11 @@ class CompanyLeadRsvpTicketMailer < ApplicationMailer
   # with the following lookup:
   #
   #   en.company_lead_rsvp_ticket_mailer.company_lead_rsvp_ticket.subject
-  #
+
+  default from: 'noreply@bohemiarealtygroup.com'
+  include CompanyLeadRsvpTicketsHelper
+  add_template_helper(CompanyLeadRsvpTicketsHelper)
+
   def company_lead_rsvp_ticket(ticket)
 
     @company_lead_rsvp_ticket = ticket
@@ -13,5 +17,5 @@ class CompanyLeadRsvpTicketMailer < ApplicationMailer
     mail to: @company_lead.email_address,
          subject: "#{@company_lead.first_name}'s RSVP ticket for the #{@event.title}"
   end
-  
+
 end

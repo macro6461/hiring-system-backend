@@ -38,37 +38,37 @@
 
 
 #January Event
-    Event.create(title: "Bohemia January Hiring Event", date: "Wednesday, January 10th, 7-8:30pm", description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026")
+    Event.create(title: "Bohemia January Hiring Event", start_date: DateTime.new(2018, 01, 10, 19, 00, 0), end_date: DateTime.new(2018, 01, 10, 20, 30, 0), description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026")
 
 #February Event
-    Event.create(title: "Bohemia February Hiring Event", date: "Wednesday, February 21st, 7-8:30pm", description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026")
+    Event.create(title: "Bohemia February Hiring Event", start_date: DateTime.new(2018, 02, 21, 19, 00, 0), end_date: DateTime.new(2018, 02, 21, 20, 30, 0), description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026")
 
 #March Event
-    Event.create(title: "Bohemia March Hiring Event", date: "Wednesday, March 21st, 7-8:30pm", description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026")
+    Event.create(title: "Bohemia March Hiring Event", start_date: DateTime.new(2018, 03, 21, 19, 00, 0), end_date: DateTime.new(2018, 03, 21, 20, 30, 0), description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026")
 
 #April Event
-    Event.create(title: "Bohemia April Hiring Event", date: "Wednesday, April 18th, 7-8:30pm", description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026")
+    Event.create(title: "Bohemia April Hiring Event", start_date: DateTime.new(2018, 04, 18, 19, 00, 0), end_date: DateTime.new(2018, 04, 18, 20, 30, 0), description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026")
 
 #May Event
-    Event.create(title: "Bohemia May Hiring Event", date: "Wednesday, May 23rd, 7-8:30pm", description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026")
+    Event.create(title: "Bohemia May Hiring Event", start_date: DateTime.new(2018, 05, 23, 19, 00, 0), end_date: DateTime.new(2018, 05, 23, 20, 30, 0), description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026")
 
 #June Event
-    Event.create(title: "Bohemia June Hiring Event", date: "Wednesday, June 27th, 7-8:30pm", description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026")
+    Event.create(title: "Bohemia June Hiring Event", start_date: DateTime.new(2018, 06, 27, 19, 00, 0), end_date: DateTime.new(2018, 06, 27, 20, 30, 0), description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026")
 
 #August Event
-    Event.create(title: "Bohemia August Hiring Event", date: "Wednesday, August 1st, 7-8:30pm", description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026")
+    Event.create(title: "Bohemia August Hiring Event", start_date: DateTime.new(2018, 8, 01, 19, 00, 0), end_date: DateTime.new(2018, 8, 01, 20, 30, 0), description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026")
 
 #September Event
-    Event.create(title: "Bohemia September Hiring Event", date: "Wednesday, September 12th, 7-8:30pm", description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026")
+    Event.create(title: "Bohemia September Hiring Event", start_date: DateTime.new(2018, 9, 12, 19, 00, 0), end_date: DateTime.new(2018, 9, 12, 20, 30, 0), description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026")
 
 #October Event
-    Event.create(title: "Bohemia October Hiring Event", date: "Wednesday, October 17th, 7-8:30pm", description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026")
+    Event.create(title: "Bohemia October Hiring Event", start_date: DateTime.new(2018, 10, 17, 19, 00, 0), end_date: DateTime.new(2018, 10, 17, 20, 30, 0), description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026")
 
 #November Event
-    Event.create(title: "Bohemia November Hiring Event", date: "Wednesday, November 14th, 7-8:30pm", description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026")
+    Event.create(title: "Bohemia November Hiring Event", start_date: DateTime.new(2018, 11, 14, 19, 00, 0), end_date: DateTime.new(2018, 10, 14, 20, 30, 0), description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026")
 
 #December Event
-    Event.create(title: "Bohemia December Hiring Event", date: "Wednesday, December 12th, 7-8:30pm", description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026")
+    Event.create(title: "Bohemia December Hiring Event", start_date: DateTime.new(2018, 12, 12, 19, 00, 0), end_date: DateTime.new(2018, 12, 12, 20, 30, 0), description: "Bohemia Realty Group is organizing a hiring event for all those interested in becoming a realtor!", location: "2101 Frederick Douglass Boulevard, New York, NY 10026")
 
 
 #CompanyLeads
