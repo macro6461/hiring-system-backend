@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+  # scope :active, -> { where('end_date >= :twelve_hours_ago', twelve_hours_ago: Time.now - 12.hours) }
 
   has_many :company_lead_rsvps
   has_many :trainer_lead_rsvps
