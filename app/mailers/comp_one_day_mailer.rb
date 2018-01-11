@@ -1,5 +1,9 @@
 class CompOneDayMailer < ApplicationMailer
 
+  default from: 'noreply@bohemiarealtygroup.com'
+  include CompanyLeadRsvpTicketsHelper
+  add_template_helper(CompanyLeadRsvpTicketsHelper)
+
   def comp_one_day(ticket)
       byebug
       @ticket = ticket

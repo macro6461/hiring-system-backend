@@ -1,5 +1,9 @@
 class TrainOneWeekMailer < ApplicationMailer
 
+  default from: 'noreply@bohemiarealtygroup.com'
+  include TrainerLeadRsvpTicketsHelper
+  add_template_helper(TrainerLeadRsvpTicketsHelper)
+
   def train_one_week(ticket)
 
     @ticket = ticket
