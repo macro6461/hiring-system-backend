@@ -154,13 +154,8 @@
 
                             <span style="font-family:lato,helvetica neue,helvetica,arial,sans-serif">Dear <%=@ticket.trainer_lead[0].first_name%>,&nbsp;<br>
 <br>
-Thank you again for your RSVP.<br>
-Please bring this ticket to the event for check-in.&nbsp;<br>
-&nbsp; &nbsp;<br>
-<%=image_tag("#{@ticket.generate_qr(@ticket.otp_secret_key)}", :alt => "qrcode")%> <br/>
-<h3>Confirmation Number: <%= @ticket.confirmation %></h3>
-Date: <%= date(@ticket.start_date)%>
-</span><br>
+Thank you again for your RSVP. We can't wait to see you tomorrow!<br>
+<br>
 <span style="font-family:lato,helvetica neue,helvetica,arial,sans-serif">Time: <%= time(@ticket.start_date)%></span><span style="font-family:lato,helvetica neue,helvetica,arial,sans-serif"> to </span><span style="font-family:lato,helvetica neue,helvetica,arial,sans-serif"><%= time(@ticket.end_date)%></span><br>
 <span style="font-family:lato,helvetica neue,helvetica,arial,sans-serif">At our Harlem office,<br>
 <a href="https://maps.google.com/?q=2101+Frederick+Douglass+Blvd&amp;entry=gmail&amp;source=g">2101 Frederick Douglass Blvd</a>.,&nbsp;between <a href="https://maps.google.com/?q=113/114+St&amp;entry=gmail&amp;source=g">113/114 St</a>.<br>
