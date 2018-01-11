@@ -13,7 +13,13 @@ set :output, {:error => "log/cron_error_log.log", :standard => "log/cron_log.log
 
 every 2.minutes do
   rake "events:delete_12_hours_old"
+end
+
+every :wednesday, :at => '7:10pm' do
   rake "events:send_email_one_week"
+end
+
+every :tuesday, :at => "7:10pm" do
   rake "events:send_email_one_day"
 end
 #t
