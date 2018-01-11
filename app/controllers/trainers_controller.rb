@@ -2,7 +2,7 @@ class TrainersController < ApplicationController
 
   def index
       @trainers = Trainer.all.sort_by(&:updated_at)
-      render json: @trainers
+      render json: @trainers, include: 'trainer_leads'
     end
 
     def show

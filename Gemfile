@@ -27,6 +27,7 @@ gem 'rack-cors'
 gem 'active_model_otp'
 gem 'rqrcode'
 gem 'barby',  '~> 0.6.2'
+gem 'active_model_serializers', '0.9.3'
 
 gem 'google-qr', '~> 0.2.2'
 

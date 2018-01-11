@@ -27,6 +27,8 @@ GEM
     active_model_otp (1.2.0)
       activemodel
       rotp
+    active_model_serializers (0.9.3)
+      activemodel (>= 3.2)
     activejob (5.1.4)
       activesupport (= 5.1.4)
       globalid (>= 0.3.6)
@@ -133,6 +135,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_otp
+  active_model_serializers (= 0.9.3)
   barby (~> 0.6.2)
   byebug
   google-qr (~> 0.2.2)

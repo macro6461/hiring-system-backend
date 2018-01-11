@@ -5,7 +5,7 @@ class CreateTrainers < ActiveRecord::Migration[5.1]
        t.string :last_name
        t.string :email_address
        t.string :phone_number
-       t.string :url
+       t.string :url, default: nil
        t.boolean :occupied, default: false
        t.boolean :hold, default: false
        t.timestamps

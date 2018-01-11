@@ -1,13 +1,13 @@
 class EventsController < ApplicationController
 
   def index
-      @events = Event.all
-      render json: @events
+      @events = Event.order("start_date asc")
+      render json: @events, include: ['company_lead_rsvps', 'trainer_lead_rsvps']
     end
 
     def show
       @event = Event.find(params[:id])
-      render json: @event
+      render json: @events, include: ['company_lead_rsvps', 'trainer_lead_rsvps']
     end
 
     def create

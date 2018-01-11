@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   resources :company_lead_rsvp_tickets
   resources :trainer_lead_rsvp_tickets
   resources :events
-  
+
+
 end
