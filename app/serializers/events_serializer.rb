@@ -3,7 +3,6 @@ class EventsSerializer < ActiveModel::Serializer
 
   has_many :company_lead_rsvps
   has_many :trainer_lead_rsvps
-  has_many :rsvps
 
   def rsvps
     object.company_lead_rsvps.length + object.trainer_lead_rsvps.length
