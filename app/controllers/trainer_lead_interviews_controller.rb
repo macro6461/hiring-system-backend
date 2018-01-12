@@ -12,8 +12,6 @@ class TrainerLeadInterviewsController < ApplicationController
 
     def create
 
-      # @free_trainers = Trainer.all.where(:occupied=>false, :hold=>false).sort_by(&:updated_at)
-      # @first_free_trainer = @free_trainers.first
       if !params[:trainer_lead_id]
         @trainer_lead = TrainerLead.where(:first_name=>trainer_lead_interview_params[:first_name], :last_name=>trainer_lead_interview_params[:last_name], :email_address=>trainer_lead_interview_params[:email_address]).first_or_create do |trainer_lead|
           trainer_lead.first_name = trainer_lead_interview_params[:first_name]
