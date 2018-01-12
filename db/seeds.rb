@@ -76,11 +76,11 @@
 
 
 #CompanyLeads
-CompanyLead.create(first_name: "Jane", last_name: "Doe", email_address: "jane@doe.com", phone_number: "221-221-2221", licensed: true)
-
-CompanyLead.create(first_name: "Paul", last_name: "Bunion", email_address: "paul@bunion.com", phone_number: "221-333-2221", licensed: false)
-
-CompanyLead.create(first_name: "Joe", last_name: "Dileo", email_address: "joe@dileo.com", phone_number: "221-888-2221", licensed: true)
+# CompanyLead.create(first_name: "Jane", last_name: "Doe", email_address: "jane@doe.com", phone_number: "221-221-2221", licensed: true)
+#
+# CompanyLead.create(first_name: "Paul", last_name: "Bunion", email_address: "paul@bunion.com", phone_number: "221-333-2221", licensed: false)
+#
+# CompanyLead.create(first_name: "Joe", last_name: "Dileo", email_address: "joe@dileo.com", phone_number: "221-888-2221", licensed: true)
 
 
 # #TrainerLeads

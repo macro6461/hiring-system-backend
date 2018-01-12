@@ -28,6 +28,7 @@ class TrainerLeadInterviewsController < ApplicationController
         # @trainer_lead_interview = TrainerLeadInterview.where(title: @title, trainer_id: @first_free_trainer.id, date: trainer_lead_interview_params[:date], location: "Bohemia Realty Group, 2101 Frederick Douglass Boulevard, New York, NY 10026", trainer_lead_id: @trainer_lead.id)
 
         @trainer_lead_interview = TrainerLeadInterview.where(:trainer_lead_id=>@trainer_lead.id).first_or_create do |trainer_lead_interview|
+          byebug
           trainer_lead_interview.trainer_id = @first_free_trainer.id
           trainer_lead_interview.title =  @title
           trainer_lead_interview.date = trainer_lead_interview_params[:date]
