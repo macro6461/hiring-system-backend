@@ -1,9 +1,9 @@
 class TrainersController < ApplicationController
 
-  def index
-      options = 'trainer_leads', 'company_lead_interviews', 'trainer_lead_interviews' 
-      @trainers = Trainer.all.sort_by(&:updated_at)
-      render json: @trainers, include: options
+    def index
+        options = 'trainer_leads', 'company_lead_interviews', 'trainer_lead_interviews'
+        @trainers = Trainer.all.sort_by(&:updated_at)
+        render json: @trainers, include: options
     end
 
     def show
@@ -12,7 +12,6 @@ class TrainersController < ApplicationController
     end
 
     def create
-
       @trainer = Trainer.where(:first_name => trainer_params[:first_name], :last_name => trainer_params[:last_name]).first_or_create do |trainer|
         trainer.email_address = trainer_params[:email_address]
         trainer.phone_number = trainer_params[:phone_number]
@@ -26,7 +25,6 @@ class TrainersController < ApplicationController
       else
         render json: {error: @trainer.errors.messages.first}, status: 406
       end
-
     end
 
     def update
