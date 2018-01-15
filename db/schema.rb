@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171214233715) do
+ActiveRecord::Schema.define(version: 20180115143316) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20171214233715) do
     t.integer "company_lead_id"
     t.text "notes"
     t.string "hire", default: "N/A"
+    t.integer "interview_reference_id"
+    t.boolean "reference", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -52,6 +54,8 @@ ActiveRecord::Schema.define(version: 20171214233715) do
     t.integer "company_lead_id"
     t.boolean "checked_in", default: false
     t.integer "event_id"
+    t.integer "rsvp_reference_id"
+    t.boolean "reference", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -74,6 +78,20 @@ ActiveRecord::Schema.define(version: 20171214233715) do
     t.datetime "end_date"
     t.text "description"
     t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "interview_references", force: :cascade do |t|
+    t.integer "trainer_id"
+    t.integer "company_lead_interview_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rsvp_references", force: :cascade do |t|
+    t.integer "trainer_id"
+    t.integer "company_lead_rsvp_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

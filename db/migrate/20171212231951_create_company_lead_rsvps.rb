@@ -9,7 +9,8 @@ class CreateCompanyLeadRsvps < ActiveRecord::Migration[5.1]
       t.integer :company_lead_id
       t.boolean :checked_in, default: false
       t.integer :event_id
-
+      t.integer :rsvp_reference_id, default: nil
+      t.boolean :reference, default: false
       t.timestamps
     end
   end

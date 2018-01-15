@@ -8,7 +8,6 @@ class CreateTrainerLeadInterviews < ActiveRecord::Migration[5.1]
        t.integer :trainer_lead_id
        t.text :notes, default: nil
        t.string :hire, default: "N/A"
-
        t.timestamps
     end
   end

@@ -4,4 +4,6 @@ class TrainerSerializer < ActiveModel::Serializer
   has_many :trainer_leads
   has_many :company_lead_interviews
   has_many :trainer_lead_interviews
+  has_many :rsvp_references
+  has_many :interview_references
 end

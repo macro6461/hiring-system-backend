@@ -1,7 +1,7 @@
 class TrainersController < ApplicationController
 
     def index
-        options = 'trainer_leads', 'company_lead_interviews', 'trainer_lead_interviews'
+        options = 'trainer_leads', 'company_lead_interviews', 'trainer_lead_interviews', 'interview_references', 'rsvp_references'
         @trainers = Trainer.all.sort_by(&:updated_at)
         render json: @trainers, include: options
     end

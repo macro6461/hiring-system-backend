@@ -2,9 +2,7 @@ class CompanyLeadInterview < ApplicationRecord
 
   # belongs_to :trainer
   belongs_to :company_lead
-
-
-  after_save :update_company_lead, :update_trainer, :check_leads
+  after_save :update_company_lead, :update_trainer
 
   def trainer
     if self.trainer_id == nil
@@ -20,20 +18,26 @@ class CompanyLeadInterview < ApplicationRecord
     else
       is_hired = self.hire
       company_lead_interview_trainer = Trainer.all.find(self.trainer_id)
-      if is_hired == "N/A" || is_hired == nil
-
-        company_lead_interview_trainer.update(occupied: true)
-        # return company_lead_interview_trainer
-      elsif is_hired == "yes"
-
-        company_lead_interview_trainer.update(occupied: false)
-        self.update(trainer_id: nil)
-        # return company_lead_interview_trainer
-      elsif is_hired == "no"
-
-        company_lead_interview_trainer.update(occupied: false)
-        self.update(trainer_id: nil)
-        # return company_lead_interview_trainer
+      byebug
+      if self.reference == true && (is_hired == "N/A" || is_hired == nil)
+        byebug
+        return self.trainer.update(occupied: false)
+      else
+        if is_hired == "N/A" || is_hired == nil
+          if self.reference == true
+            company_lead_interview_trainer.update(occupied: false)
+          else
+            company_lead_interview_trainer.update(occupied: true)
+          end
+        elsif is_hired == "yes"
+          company_lead_interview_trainer.update(occupied: false)
+          self.update(trainer_id: nil)
+          # return company_lead_interview_trainer
+        elsif is_hired == "no"
+          company_lead_interview_trainer.update(occupied: false)
+          self.update(trainer_id: nil)
+          # return company_lead_interview_trainer
+        end
       end
     end
   end
