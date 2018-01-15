@@ -8,7 +8,7 @@ class Event < ApplicationRecord
   has_many :company_lead_rsvp_tickets, through: :company_lead_rsvps
   has_many :trainer_lead_rsvp_tickets, through: :company_lead_rsvps
 
-  before_destroy :filter_emails_attendee_or_absentee
+  # before_destroy :filter_emails_attendee_or_absentee
 
   def filter_emails_attendee_or_absentee
 

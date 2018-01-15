@@ -6,7 +6,7 @@ class CreateEvents < ActiveRecord::Migration[5.1]
        t.datetime :end_date
        t.text :description
        t.string :location
-
+       t.string :access, default: "open"
        t.timestamps
     end
   end

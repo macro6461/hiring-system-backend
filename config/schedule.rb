@@ -12,7 +12,11 @@ set :environment, "development"
 set :output, {:error => "log/cron_error_log.log", :standard => "log/cron_log.log"}
 
 every 2.minutes do
-  rake "events:delete_12_hours_old"
+  rake "events:close"
+end
+
+every 2.minutes do
+  rake "events:mail_after_twelve_hours"
 end
 
 every :wednesday, :at => '7:10pm' do
@@ -22,9 +26,5 @@ end
 every :tuesday, :at => "7:10pm" do
   rake "events:send_email_one_day"
 end
-#t
-# every 4.days do
-#   runner "AnotherModel.prune_old_records"
-# end
 
 # Learn more: http://github.com/javan/whenever

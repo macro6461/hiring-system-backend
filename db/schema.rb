@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20180115143316) do
     t.datetime "end_date"
     t.text "description"
     t.string "location"
+    t.string "access", default: "open"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
