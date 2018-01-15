@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 
-  def index
+    def index
       @events = Event.order("start_date asc")
       render json: @events, include: ['company_lead_rsvps', 'trainer_lead_rsvps']
     end
@@ -41,7 +41,7 @@ class EventsController < ApplicationController
     private
 
     def event_params
-      params.permit(:title, :start_date, :end_date, :description, :location, :access)
+      params.permit(:title, :start_date, :end_date, :description, :location, :access, :twelve_hours_later)
     end
 
 end

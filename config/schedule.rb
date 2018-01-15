@@ -15,8 +15,8 @@ every 2.minutes do
   rake "events:close"
 end
 
-every 2.minutes do
-  rake "events:mail_after_twelve_hours"
+every 3.minutes do
+  rake "events:email_after_twelve_hours"
 end
 
 every :wednesday, :at => '7:10pm' do
